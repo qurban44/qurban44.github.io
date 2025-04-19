@@ -1,69 +1,99 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Çayxana Menyusu</title>
   <style>
-    body {
-      background: linear-gradient(to right, #47628a, #f7f9fc);
-      font-family: 'Segoe UI', sans-serif;
-      color: #1a1a2e;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
+
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+      min-height: 100vh;
+      color: #fff;
+    }
+
     h1 {
       text-align: center;
       font-size: 3rem;
-      color: hsl(261, 96%, 47%)
       margin-bottom: 3rem;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      color: #ffffff;
+      text-shadow: 0 0 15px #8b5cf6;
+      animation: fadeIn 1s ease-in-out;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
     }
+
     .set {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       padding: 1rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-top: 5px solid #3b82f6;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
+
     .set:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      transform: scale(1.03);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
     }
+
     .set img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
       border-radius: 12px;
       margin-bottom: 1rem;
+      transition: transform 0.3s ease;
     }
+
+    .set:hover img {
+      transform: scale(1.05);
+    }
+
     .set h2 {
-      margin: 0 0 0.5rem;
-      font-size: 1.3rem;
-      color: #1e40af;
-      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #facc15;
     }
+
     .set p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #374151;
+      font-size: 1rem;
+      color: #e5e7eb;
     }
+
     .price {
       font-weight: bold;
-      color: #0f172a;
+      color: #34d399;
+      font-size: 1.1rem;
       margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Çayxana Menyusu</h1>
+  <h1>🍵 Çayxana Menyusu</h1>
   <div class="menu-grid">
     <div class="set">
       <img src="img/e2a58689-dc2f-4d00-8a55-fe29b6a793bc.jpg" alt="Set 1">
@@ -74,25 +104,25 @@
     <div class="set">
       <img src="img/aaf9892a-93e9-4e24-bdff-763bd0ad2a93.jpg" alt="Set 2">
       <h2>Set 2</h2>
-      <p>Qəlyan(Qreypfrut)+Çay+Mürəbbə</p>
+      <p>Qəlyan (Qreypfrut)+Çay+Mürəbbə</p>
       <p class="price">25 ₼</p>
     </div>
     <div class="set">
       <img src="https://menu.myqrcodemenu.com/files/products/89f9e562-9497-42fc-92bb-de0a826bd13069ab6b14-c869-4d88-9ddc-5bb17796de4d.jpg" alt="Set 3">
       <h2>Set 3</h2>
-      <p>Qəlyan(Ananas)+Çay+Mürəbbə</p>
+      <p>Qəlyan (Ananas)+Çay+Mürəbbə</p>
       <p class="price">30 ₼</p>
     </div>
     <div class="set">
-      <img src="https://quzu.az/wp-content/uploads/qutab.webp" alt="Set 4">
+      <img src="https://quzu.az/wp-content/uploads/qutab.webp" alt="Qutab">
       <h2>Qutab</h2>
-      <p>göy/ət</p>
-      <p class="price">1.5/2 ₼</p>
+      <p>Göy / Ət</p>
+      <p class="price">1.5 / 2 ₼</p>
     </div>
     <div class="set">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStn8NPA3YEa1slk34zusHncxN2V8EaQmYWbw&s" alt="Set 5">
-      <h2></h2>
-      <p>Peraşki</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStn8NPA3YEa1slk34zusHncxN2V8EaQmYWbw&s" alt="Peraşki">
+      <h2>Peraşki</h2>
+      <p>Yağlı, isti, dadlı</p>
       <p class="price">1 ₼</p>
     </div>
   </div>
