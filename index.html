@@ -3,17 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qrup Menyu</title>
+  <title>Lom-Lom Menyu</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      background: linear-gradient(45deg, #1e3c72, #2a5298);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .header {
+      position: absolute;
+      top: -100px;
+      font-size: 70px;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
+      letter-spacing: 5px;
+      text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+      animation: slideDown 1.5s ease-in-out forwards;
+    }
+
+    @keyframes slideDown {
+      0% { top: -100px; opacity: 0; }
+      50% { top: 30px; opacity: 1; }
+      100% { top: 20px; opacity: 1; }
     }
 
     .menu-container {
@@ -80,16 +103,20 @@
 </head>
 <body>
 
-<div class="menu-container">
-  <a href="ickiler.html" class="menu-item">
-    <img src="img/papel-de-parede-mochaccino-hd-8k-banco-de-imagem-fotografica_890746-23830.jpg" alt="İçkilər">
-    <h2>İçkilər</h2>
-  </a>
-  <a href="sirniyyatlar.html" class="menu-item">
-    <img src="img/pasta28.webp" alt="Şirniyyatlar">
-    <h2>Şirniyyatlar</h2>
-  </a>
-</div>
+  <div class="header">
+    Lom-Lom
+  </div>
+
+  <div class="menu-container">
+    <a href="ickiler.html" class="menu-item">
+      <img src="img/papel-de-parede-mochaccino-hd-8k-banco-de-imagem-fotografica_890746-23830.jpg" alt="İçkilər">
+      <h2>İçkilər</h2>
+    </a>
+    <a href="sirniyyatlar.html" class="menu-item">
+      <img src="img/pasta28.webp" alt="Şirniyyatlar">
+      <h2>Şirniyyatlar</h2>
+    </a>
+  </div>
 
 </body>
 </html>
