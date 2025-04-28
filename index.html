@@ -1,134 +1,83 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Çayxana Menyusu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qrup Menyu</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       min-height: 100vh;
-      color: #fff;
     }
 
-    h1 {
-      text-align: center;
-      font-size: 3rem;
-      margin-bottom: 3rem;
-      color: #ffffff;
-      text-shadow: 0 0 15px #8b5cf6;
-      animation: fadeIn 1s ease-in-out;
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      padding: 50px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      max-width: 900px;
+      width: 90%;
+      animation: fadeIn 1s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .set {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
+    .menu-item {
+      text-align: center;
+      background: linear-gradient(135deg, #f6f9fc, #e3e8ee);
       border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      padding: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .set:hover {
-      transform: scale(1.01);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
-      border: 1px solid #8b5cf6;
+    .menu-item:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
 
-    .set img {
+    .menu-item img {
       width: 100%;
-      max-height: 180px;
+      height: 220px;
       object-fit: cover;
-      object-position: center;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      display: block;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
     }
 
-    .set h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #facc15;
-    }
-
-    .set p {
-      font-size: 1rem;
-      color: #e5e7eb;
-    }
-
-    .price {
-      font-weight: bold;
-      color: #34d399;
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
+    .menu-item h2 {
+      margin: 20px 0;
+      font-size: 26px;
+      color: #333;
+      letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
-  <h1>🍵 Menyu</h1>
-  <div class="menu-grid">
-    <div class="set">
-      <img src="img/e2a58689-dc2f-4d00-8a55-fe29b6a793bc.jpg" alt="Set 1">
-      <h2>Set 1</h2>
-      <p>Qəlyan (çaşkada)+Çay+Snickers</p>
-      <p class="price">20 ₼</p>
-    </div>
-    <div class="set">
-      <img src="img/aaf9892a-93e9-4e24-bdff-763bd0ad2a93.jpg" alt="Set 2">
-      <h2>Set 2</h2>
-      <p>Qəlyan (Qreypfrut)+Çay+Mürəbbə</p>
-      <p class="price">25 ₼</p>
-    </div>
-    <div class="set">
-      <img src="https://menu.myqrcodemenu.com/files/products/89f9e562-9497-42fc-92bb-de0a826bd13069ab6b14-c869-4d88-9ddc-5bb17796de4d.jpg" alt="Set 3">
-      <h2>Set 3</h2>
-      <p>Qəlyan (Ananas)+Çay+Mürəbbə</p>
-      <p class="price">30 ₼</p>
-    </div>
-        <div class="set">
-      <img src="img/papel-de-parede-mochaccino-hd-8k-banco-de-imagem-fotografica_890746-23830.jpg" alt="Peraşki">
-      <h2>Coffe</h2>
-      <p></p>
-      <p class="price">1.5 ₼</p>
-    </div>
-    <div class="set">
-      <img src="https://quzu.az/wp-content/uploads/qutab.webp" alt="Qutab">
-      <h2>Qutab</h2>
-      <p>Göy / Ət</p>
-      <p class="price">1.5 / 2 ₼</p>
-    </div>
-    <div class="set">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStn8NPA3YEa1slk34zusHncxN2V8EaQmYWbw&s" alt="Peraşki">
-      <h2>Peraşki</h2>
-      <p>Yağlı, isti, dadlı</p>
-      <p class="price">1 ₼</p>
-    </div>
-  </div>
+
+<div class="menu-container">
+  <a href="ickiler.html" class="menu-item">
+    <img src="https://images.unsplash.com/photo-1573164574239-66406c7b77b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="İçkilər">
+    <h2>İçkilər</h2>
+  </a>
+  <a href="sirniyyatlar.html" class="menu-item">
+    <img src="https://images.unsplash.com/photo-1584433304854-0127a8fa3883?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Şirniyyatlar">
+    <h2>Şirniyyatlar</h2>
+  </a>
+</div>
+
 </body>
 </html>
