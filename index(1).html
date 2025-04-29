@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>İçkilər</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: #333;
+    }
+
+    /* Üst hissə - sarı xətt və logo */
+    .top-bar {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      background-color: #FFD700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background-color: white;
+      border: 6px solid #FFD700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 5px;
+      z-index: 2;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-circle img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+    }
+
+    /* İçkilər seçimləri */
+    .menu-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 80px;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .menu-button {
+      position: relative;
+      width: 90%;
+      max-width: 450px;
+      height: 180px;
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .menu-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+
+    .menu-button .bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+
+    .menu-button .label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      z-index: 2;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 600px) {
+      .menu-button {
+        height: 140px;
+      }
+
+      .menu-button .label {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Üst hissə və logo -->
+  <div class="top-bar">
+    <div class="logo-circle">
+      <img src="img/logo.png" alt="Logo">
+    </div>
+  </div>
+
+  <!-- İçkilər seçimləri -->
+  <div class="menu-options">
+
+    <!-- Kofe -->
+    <a href="coffe.html" class="menu-button">
+      <img src="img/coffee.jpg" class="bg-img" alt="Kofe">
+      <div class="label">Kofe</div>
+    </a>
+
+    <!-- Soyuq İçkilər -->
+    <a href="cold_drinks.html" class="menu-button">
+      <img src="img/juice.jpg" class="bg-img" alt="Soyuq İçkilər">
+      <div class="label">Soyuq İçkilər</div>
+    </a>
+
+  </div>
+
+</body>
+</html>
