@@ -3,133 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lom-Lom Menyu</title>
+  <title>Menyu</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(45deg, #1e3c72, #2a5298);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      color: #fff;
-      overflow: hidden;
-      position: relative;
+      font-family: sans-serif;
+      background-color: #fdfdfd;
     }
 
+    /* Header */
     .header {
-      position: absolute;
-      top: -100px;
-      font-size: 60px;
+      position: relative;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle {
+      width: 120px;
+      height: 120px;
+      border: 4px solid gold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+    }
+
+    .logo {
+      font-size: 20px;
       font-weight: bold;
-      color: #fff;
-      text-transform: uppercase;
-      text-align: center;
-      width: 100%;
-      letter-spacing: 5px;
-      text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-      animation: slideDown 1.5s ease-in-out forwards;
+      color: black;
     }
 
-    @keyframes slideDown {
-      0% { top: -100px; opacity: 0; }
-      50% { top: 30px; opacity: 1; }
-      100% { top: 20px; opacity: 1; }
+    /* Sections */
+    .section {
+      margin: 40px 20px;
     }
 
-    .menu-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      padding: 30px;
-      background: white;
-      border-radius: 30px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-      max-width: 1000px;
-      width: 90%;
-      animation: fadeIn 1s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .menu-item {
-      text-align: center;
-      background: linear-gradient(135deg, #f6f9fc, #e3e8ee);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .menu-item:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    .menu-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      transition: transform 0.4s ease;
-    }
-
-    .menu-item img:hover {
-      transform: scale(1.05);
-    }
-
-    .menu-item h2 {
-      margin: 20px 0;
+    .section h2 {
+      color: gold;
       font-size: 24px;
-      color: #333;
-      letter-spacing: 1.5px;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      position: relative;
+      left: -15px; /* yan çıxıntı effekti */
+      margin-bottom: 15px;
     }
 
-    .menu-item:hover h2 {
-      color: #00bcd4;
+    .section ul {
+      list-style: none;
+      padding-left: 10px;
     }
 
-    @media screen and (max-width: 768px) {
-      .header {
-        font-size: 50px;
-      }
-
-      .menu-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .menu-item h2 {
-        font-size: 22px;
-      }
-
-      .menu-item img {
-        height: 180px;
-      }
+    .section li {
+      padding: 6px 0;
+      font-size: 18px;
     }
 
-    @media screen and (max-width: 480px) {
-      .header {
-        font-size: 40px;
-      }
-
-      .menu-item h2 {
+    @media (max-width: 600px) {
+      .section h2 {
         font-size: 20px;
+        left: -10px;
       }
 
-      .menu-item img {
-        height: 160px;
+      .logo {
+        font-size: 16px;
+      }
+
+      .circle {
+        width: 100px;
+        height: 100px;
       }
     }
   </style>
@@ -137,18 +80,36 @@
 <body>
 
   <div class="header">
-    Lom-Lom
+    <div class="circle">
+      <div class="logo">LOGO</div>
+    </div>
   </div>
 
-  <div class="menu-container">
-    <a href="ickiler.html" class="menu-item">
-      <img src="img/papel-de-parede-mochaccino-hd-8k-banco-de-imagem-fotografica_890746-23830.jpg" alt="İçkilər">
-      <h2>İçkilər</h2>
-    </a>
-    <a href="sirniyyatlar.html" class="menu-item">
-      <img src="img/pasta28.webp" alt="Şirniyyatlar">
-      <h2>Şirniyyatlar</h2>
-    </a>
+  <div class="section">
+    <h2>İçkilər</h2>
+    <ul>
+      <li>Çay</li>
+      <li>Kofe</li>
+      <li>Şirə</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Yeməklər</h2>
+    <ul>
+      <li>Düşbərə</li>
+      <li>Plov</li>
+      <li>Kabab</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Desertlər</h2>
+    <ul>
+      <li>Şəkərbura</li>
+      <li>Pakhlava</li>
+      <li>Dondurma</li>
+    </ul>
   </div>
 
 </body>
