@@ -5,153 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coffee Menyu</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&display=swap');
-
     body {
       margin: 0;
-      font-family: 'Raleway', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #fff;
       color: #333;
     }
 
+    /* Üst hissə - sarı xətt və başlıq */
     .top-bar {
       position: relative;
       width: 100%;
-      height: 140px;
+      height: 150px; /* Hündürlük artırılıb */
       background-color: #FFD700;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .logo-circle {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background-color: white;
-      border: 6px solid #FFD700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 10px;
-      z-index: 2;
-      overflow: hidden;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .logo-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      flex-direction: column;
+      gap: 20px; /* Başlıq ilə altındakı elementlər arasındakı məsafə */
     }
 
     .title-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 44px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 60px;
       font-weight: 700;
-      color: white;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-      letter-spacing: 3px;
+      color: #333;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+      letter-spacing: 4px;
+      text-align: center;
     }
 
-    .menu-section {
-      padding: 40px 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Menyu düymələrinin dizaynı */
+    .menu-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 80px;
       gap: 30px;
-      background: #fffdf2;
-    }
-
-    .coffee-card {
-      background-color: white;
-      border-radius: 20px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .coffee-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    .coffee-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      filter: brightness(0.85);
-    }
-
-    .coffee-info {
       padding: 20px;
     }
 
-    .coffee-name {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #333;
+    .menu-button {
+      position: relative;
+      width: 90%;
+      max-width: 450px;
+      height: 180px;
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .coffee-desc {
-      font-size: 15px;
-      color: #666;
-      line-height: 1.4;
+    .menu-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+
+    .menu-button .bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+
+    .menu-button .label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      z-index: 2;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
     @media (max-width: 600px) {
-      .title-text {
-        font-size: 32px;
+      .menu-button {
+        height: 140px;
       }
 
-      .coffee-img {
-        height: 160px;
+      .menu-button .label {
+        font-size: 22px;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Üst hissə və başlıq -->
   <div class="top-bar">
-    <div class="logo-circle">
-      <img src="img/IMG_7677 (1).PNG" alt="Logo">
-    </div>
-    <div class="title-text">NOM COFFEE</div>
+    <div class="title-text">COFFEE MENU</div>
   </div>
 
-  <div class="menu-section">
-    <div class="coffee-card">
-      <img src="img/espresso.jpg" alt="Espresso" class="coffee-img">
-      <div class="coffee-info">
-        <div class="coffee-name">Espresso</div>
-        <div class="coffee-desc">Güclü və cəmlənmiş dadlı kofe klassiklərdən biridir.</div>
-      </div>
-    </div>
+  <!-- Kofe menyu seçimləri -->
+  <div class="menu-options">
+    <!-- Espresso -->
+    <a href="espresso.html" class="menu-button">
+      <img src="img/espresso.jpg" class="bg-img" alt="Espresso">
+      <div class="label">Espresso</div>
+    </a>
 
-    <div class="coffee-card">
-      <img src="img/latte.jpg" alt="Latte" class="coffee-img">
-      <div class="coffee-info">
-        <div class="coffee-name">Latte</div>
-        <div class="coffee-desc">Süd və espresso ilə hamar və yumşaq bir ləzzət.</div>
-      </div>
-    </div>
+    <!-- Americano -->
+    <a href="americano.html" class="menu-button">
+      <img src="img/americano.jpg" class="bg-img" alt="Americano">
+      <div class="label">Americano</div>
+    </a>
 
-    <div class="coffee-card">
-      <img src="img/cappuccino.jpg" alt="Cappuccino" class="coffee-img">
-      <div class="coffee-info">
-        <div class="coffee-name">Cappuccino</div>
-        <div class="coffee-desc">Zəngin köpük və balanslı dad ilə klassik seçim.</div>
-      </div>
-    </div>
+    <!-- Latte -->
+    <a href="latte.html" class="menu-button">
+      <img src="img/latte.jpg" class="bg-img" alt="Latte">
+      <div class="label">Latte</div>
+    </a>
 
-    <div class="coffee-card">
-      <img src="img/mocha.jpg" alt="Mocha" class="coffee-img">
-      <div class="coffee-info">
-        <div class="coffee-name">Mocha</div>
-        <div class="coffee-desc">Şokolad, süd və espresso — desert kimidir.</div>
-      </div>
-    </div>
+    <!-- Cappuccino -->
+    <a href="cappuccino.html" class="menu-button">
+      <img src="img/cappuccino.jpg" class="bg-img" alt="Cappuccino">
+      <div class="label">Cappuccino</div>
+    </a>
+
+    <!-- Mocha -->
+    <a href="mocha.html" class="menu-button">
+      <img src="img/mocha.jpg" class="bg-img" alt="Mocha">
+      <div class="label">Mocha</div>
+    </a>
+
+    <!-- Cold Brew -->
+    <a href="cold_brew.html" class="menu-button">
+      <img src="img/cold_brew.jpg" class="bg-img" alt="Cold Brew">
+      <div class="label">Cold Brew</div>
+    </a>
   </div>
 
 </body>
