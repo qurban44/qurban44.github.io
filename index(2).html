@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coffee Menyu</title>
+  <title>İsti İçkilər</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -16,14 +16,29 @@
     .top-bar {
       position: relative;
       width: 100%;
-      height: 100px;
-      background: linear-gradient(135deg, #FFD700, #FFF8B5);
+      height: 120px;
+      background: linear-gradient(135deg, #ff9f43, #ffd700, #ff6f00);
+      background-size: 400% 400%;
+      animation: gradientFlow 8s ease infinite;
       display: flex;
       align-items: center;
       justify-content: center;
       border-bottom-left-radius: 50% 20%;
       border-bottom-right-radius: 50% 20%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .top-bar-content {
@@ -146,7 +161,6 @@
   </div>
 
   <div class="menu-options">
-    <!-- Bütün menyu düymələri burada eyni qalır -->
     <div class="menu-button">
       <img src="img/espresso.jpg" class="bg-img" alt="Espresso">
       <div class="label">Espresso</div>
