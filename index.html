@@ -4,19 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Menyu</title>
+  <!-- Coffee shop stili üçün font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: white;
+      background-color: #fffaf3;
       color: #333;
     }
 
-    /* Yuxarı sarı xətt və logo */
     .top-bar {
       position: relative;
       width: 100%;
-      height: 120px;
+      height: 140px;
       background-color: #FFD700;
       display: flex;
       align-items: center;
@@ -33,7 +34,7 @@
       align-items: center;
       justify-content: center;
       position: absolute;
-      top: 5px;
+      top: 10px;
       z-index: 2;
       overflow: hidden;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -45,33 +46,23 @@
       object-fit: contain;
     }
 
-    /* "NOM" yazısı üçün yeni dizayn */
-    .nom-text {
+    /* NOM - coffee shop üslubunda */
+    .nom-container {
       position: absolute;
-      font-size: 40px;
-      font-weight: 900;
-      color: white;
-      text-shadow: 2px 2px 10px rgba(255, 165, 0, 0.9);
-      animation: glow 2s infinite alternate;
-      letter-spacing: 2px;
+      top: 20px;
+      font-family: 'Pacifico', cursive;
+      font-size: 50px;
+      color: #5c4033;
+      text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8),
+                   1px 1px 0px rgba(92, 64, 51, 0.2);
     }
 
     .nom-left {
-      left: 30px;
+      left: 20px;
     }
 
     .nom-right {
-      right: 30px;
-    }
-
-    /* Daha parlaq animasiya */
-    @keyframes glow {
-      0% {
-        text-shadow: 0 0 12px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 215, 0, 0.7);
-      }
-      100% {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 215, 0, 1);
-      }
+      right: 20px;
     }
 
     /* Menyu seçimləri */
@@ -128,25 +119,26 @@
       .menu-button .label {
         font-size: 22px;
       }
+
+      .nom-container {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Yuxarı hissə və logo -->
   <div class="top-bar">
-    <div class="nom-text nom-left">NOM</div>
+    <div class="nom-container nom-left">NOM</div>
 
     <div class="logo-circle">
       <img src="img/IMG_7677 (1).PNG" alt="Logo">
     </div>
 
-    <div class="nom-text nom-right">NOM</div>
+    <div class="nom-container nom-right">NOM</div>
   </div>
 
-  <!-- Şəkilli menyu düymələri -->
   <div class="menu-options">
-
     <a href="yemekler.html" class="menu-button">
       <img src="img/plov.jpg" class="bg-img" alt="Yeməklər">
       <div class="label">Yeməklər</div>
@@ -161,7 +153,6 @@
       <img src="img/pakhlava.jpg" class="bg-img" alt="Desertlər">
       <div class="label">Desertlər</div>
     </a>
-
   </div>
 
 </body>
