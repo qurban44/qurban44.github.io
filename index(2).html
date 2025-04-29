@@ -30,15 +30,9 @@
     }
 
     @keyframes gradientFlow {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .top-bar-content {
@@ -47,6 +41,16 @@
       justify-content: space-between;
       width: 90%;
       max-width: 1100px;
+      padding: 0 20px;
+    }
+
+    .top-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 38px;
+      color: #5c4033;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6),
+                   0 0 2px rgba(92, 64, 51, 0.2);
+      z-index: 1;
     }
 
     .logo-circle {
@@ -70,15 +74,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .nom-container {
-      font-family: 'Pacifico', cursive;
-      font-size: 38px;
-      color: #5c4033;
-      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6),
-                   0 0 2px rgba(92, 64, 51, 0.2);
-      z-index: 1;
     }
 
     .menu-options {
@@ -135,8 +130,8 @@
         font-size: 24px;
       }
 
-      .nom-container {
-        font-size: 32px;
+      .top-text {
+        font-size: 30px;
       }
 
       .logo-circle {
@@ -150,91 +145,32 @@
 
   <div class="top-bar">
     <div class="top-bar-content">
-      <div class="nom-container">NOM</div>
+      <div class="top-text">İsti</div>
 
       <div class="logo-circle">
         <img src="img/IMG_7677 (1).PNG" alt="Logo">
       </div>
 
-      <div class="nom-container">NOM</div>
+      <div class="top-text">İçkilər</div>
     </div>
   </div>
 
   <div class="menu-options">
-    <div class="menu-button">
-      <img src="img/espresso.jpg" class="bg-img" alt="Espresso">
-      <div class="label">Espresso</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/latte.jpg" class="bg-img" alt="Latte">
-      <div class="label">Latte</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/cappuccino.jpg" class="bg-img" alt="Cappuccino">
-      <div class="label">Cappuccino</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/mocha.jpg" class="bg-img" alt="Mocha">
-      <div class="label">Mocha</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Americano">
-      <div class="label">Americano</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Raff">
-      <div class="label">Raff</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Milkshake">
-      <div class="label">Milkshake</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Mojito classic">
-      <div class="label">Mojito classic</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Mojito enerji">
-      <div class="label">Mojito enerji</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Mojito red">
-      <div class="label">Mojito red</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Buzlu mix">
-      <div class="label">Buzlu mix</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Çay çaynik">
-      <div class="label">Çay çaynik</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Çay çaynik jasmin">
-      <div class="label">Çay çaynik (jasmin)</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Çay fincan">
-      <div class="label">Çay fincan</div>
-    </div>
-
-    <div class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Çay fincan jasmin">
-      <div class="label">Çay fincan (jasmin)</div>
-    </div>
+    <div class="menu-button"><img src="img/espresso.jpg" class="bg-img" alt="Espresso"><div class="label">Espresso</div></div>
+    <div class="menu-button"><img src="img/latte.jpg" class="bg-img" alt="Latte"><div class="label">Latte</div></div>
+    <div class="menu-button"><img src="img/cappuccino.jpg" class="bg-img" alt="Cappuccino"><div class="label">Cappuccino</div></div>
+    <div class="menu-button"><img src="img/mocha.jpg" class="bg-img" alt="Mocha"><div class="label">Mocha</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Americano"><div class="label">Americano</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Raff"><div class="label">Raff</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Milkshake"><div class="label">Milkshake</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Mojito classic"><div class="label">Mojito classic</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Mojito enerji"><div class="label">Mojito enerji</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Mojito red"><div class="label">Mojito red</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Buzlu mix"><div class="label">Buzlu mix</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Çay çaynik"><div class="label">Çay çaynik</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Çay çaynik jasmin"><div class="label">Çay çaynik (jasmin)</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Çay fincan"><div class="label">Çay fincan</div></div>
+    <div class="menu-button"><img src="img/americano.jpg" class="bg-img" alt="Çay fincan jasmin"><div class="label">Çay fincan (jasmin)</div></div>
   </div>
 
 </body>
