@@ -4,48 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coffee Menyu</title>
-  <!-- Google Fonts - Lobster -->
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
+      font-family: 'Rubik', sans-serif;
+      background-color: #fffbea;
       color: #333;
     }
 
-    /* Üst hissə - sarı xətt və başlıq */
     .top-bar {
-      position: relative;
-      width: 100%;
-      height: 50px; /* Hündürlük artırılıb */
       background-color: #FFD700;
+      height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      gap: 20px; /* Başlıq ilə altındakı elementlər arasındakı məsafə */
-      border-radius: 10%;
+      position: relative;
     }
 
     .title-text {
-      font-family: 'Lobster', cursive;
-      font-size: 60px;
-      font-weight: 700;
-      color: #ffffff;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-      letter-spacing: 4px;
-      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 42px;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+      animation: glow 2s ease-in-out infinite alternate;
+      letter-spacing: 3px;
     }
 
-    /* Menyu düymələrinin dizaynı */
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 8px #ffffff, 0 0 16px #ffe680;
+      }
+      100% {
+        text-shadow: 0 0 20px #ffffff, 0 0 30px #ffef96;
+      }
+    }
+
     .menu-options {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 80px;
-      gap: 30px;
-      padding: 20px;
+      gap: 25px;
+      padding: 30px 20px;
     }
 
     .menu-button {
@@ -53,16 +53,17 @@
       width: 90%;
       max-width: 450px;
       height: 180px;
-      border-radius: 16px;
+      border-radius: 20px;
       overflow: hidden;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      background-color: #fff;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: default;
     }
 
     .menu-button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
     .menu-button .bg-img {
@@ -77,11 +78,11 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      font-family: 'Pacifico', cursive;
       color: white;
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 32px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
       z-index: 2;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
     @media (max-width: 600px) {
@@ -90,55 +91,44 @@
       }
 
       .menu-button .label {
-        font-size: 22px;
+        font-size: 24px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Üst hissə və başlıq -->
   <div class="top-bar">
-    <div class="title-text">COFFEE</div>
+    <div class="title-text">NOM Coffee</div>
   </div>
 
-  <!-- Kofe menyu seçimləri -->
   <div class="menu-options">
-    <!-- Espresso -->
-    <a href="espresso.html" class="menu-button">
+
+    <div class="menu-button">
       <img src="img/espresso.jpg" class="bg-img" alt="Espresso">
       <div class="label">Espresso</div>
-    </a>
+    </div>
 
-    <!-- Americano -->
-    <a href="americano.html" class="menu-button">
-      <img src="img/americano.jpg" class="bg-img" alt="Americano">
-      <div class="label">Americano</div>
-    </a>
-
-    <!-- Latte -->
-    <a href="latte.html" class="menu-button">
+    <div class="menu-button">
       <img src="img/latte.jpg" class="bg-img" alt="Latte">
       <div class="label">Latte</div>
-    </a>
+    </div>
 
-    <!-- Cappuccino -->
-    <a href="cappuccino.html" class="menu-button">
+    <div class="menu-button">
       <img src="img/cappuccino.jpg" class="bg-img" alt="Cappuccino">
       <div class="label">Cappuccino</div>
-    </a>
+    </div>
 
-    <!-- Mocha -->
-    <a href="mocha.html" class="menu-button">
+    <div class="menu-button">
       <img src="img/mocha.jpg" class="bg-img" alt="Mocha">
       <div class="label">Mocha</div>
-    </a>
+    </div>
 
-    <!-- Cold Brew -->
-    <a href="cold_brew.html" class="menu-button">
-      <img src="img/cold_brew.jpg" class="bg-img" alt="Cold Brew">
-      <div class="label">Cold Brew</div>
-    </a>
+    <div class="menu-button">
+      <img src="img/americano.jpg" class="bg-img" alt="Americano">
+      <div class="label">Americano</div>
+    </div>
+
   </div>
 
 </body>
