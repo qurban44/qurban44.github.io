@@ -45,6 +45,32 @@
       object-fit: contain;
     }
 
+    .nom-text {
+      position: absolute;
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.8);
+      animation: glow 2s infinite alternate;
+    }
+
+    .nom-left {
+      left: 20px;
+    }
+
+    .nom-right {
+      right: 20px;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 16px rgba(255, 215, 0, 0.4);
+      }
+      100% {
+        text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 215, 0, 0.9);
+      }
+    }
+
     /* Menyu seçimləri */
     .menu-options {
       display: flex;
@@ -106,9 +132,13 @@
 
   <!-- Yuxarı hissə və logo -->
   <div class="top-bar">
+    <div class="nom-text nom-left">NOM</div>
+
     <div class="logo-circle">
       <img src="img/IMG_7677 (1).PNG" alt="Logo">
     </div>
+
+    <div class="nom-text nom-right">NOM</div>
   </div>
 
   <!-- Şəkilli menyu düymələri -->
