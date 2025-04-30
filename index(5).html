@@ -1,194 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <title>Coffee</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yeməklər</title>
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>İsti Yeməklər</title>
+  <!-- Coffee shop stili üçün font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
-    animation: glow 5s infinite alternate;
-  }
-
-  @keyframes glow {
-    0% { background-color: #f8f8f8; }
-    100% { background-color: #fff9e6; box-shadow: inset 0 0 20px #ffcc0055; }
-  }
-
-  .header {
-    background: #ffcc00;
-    text-align: center;
-    font-family: 'Pacifico', cursive;
-    font-size: 50px;
-    padding: 20px;
-    margin: 0 auto;
-    font-weight: bold;
-    color: rgb(9, 9, 9);
-    text-shadow: 0 0 10px #fff;
-    border: 2px solid white;
-    box-shadow: 0 0 20px white, 0 0 40px #ffcc00;
-    line-height: 40px;
-    border-bottom-left-radius: 50% 20%;
-    border-bottom-right-radius: 50% 20%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-    animation: slide 2s infinite;
-  }
-
-  @keyframes slide {
-    0% { left: -100%; }
-    100% { left: 100%; }
-  }
-
-  .menu {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 sütunlu düzülüş */
-    gap: 15px;
-    padding: 20px;
-    justify-items: center;
-  }
-
-  @media (max-width: 768px) {
-    .menu {
-      grid-template-columns: repeat(1, 1fr); /* 1 sütunlu düzülüş mobil üçün */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf3;
+      color: #333;
     }
-  }
 
-  .item {
-    background: #fff3e0;
-    width: 90%;
-    max-width: 350px;
-    border-radius: 15px;
-    overflow: hidden;
-    text-align: center;
-    color: rgb(35, 35, 35);
-    padding: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    transition: box-shadow 0.3s ease;
-    font-weight: bold;
-    font-size: 18px;
-  }
+    /* Üst hissə - sarı xətt və logo */
+    .top-bar {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(135deg, #FFD700, #FFF8B5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom-left-radius: 50% 20%;
+      border-bottom-right-radius: 50% 20%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-  .item:hover {
-    box-shadow: 0 0 20px #ffcc00, 0 0 30px #fff;
-  }
+    .top-bar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1100px;
+    }
 
-  .item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px 15px 0 0;
-  }
+    .logo-circle {
+      width: 100px;  /* Logo boyutunu artırdım */
+      height: 100px; /* Logo boyutunu artırdım */
+      border-radius: 50%;
+      background-color: white;
+      border: 6px solid #FFD700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
 
-  .item p {
-    font-size: 22px;
-    margin: 10px 0 0;
-    font-weight: 600;
-    color: #ff6600;
-  }
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  .item span {
-    font-size: 20px;
-    color: #ff6600;
-    font-weight: 600;
-  }
+    /* NOM yazısı coffee shop stilində */
+    .nom-container {
+      font-family: 'Pacifico', cursive;
+      font-size: 38px;
+      color: #5c4033;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6),
+                   0 0 2px rgba(92, 64, 51, 0.2);
+      z-index: 1;
+    }
 
-  .item .description {
-    font-size: 16px;
-    color: #333;
-    margin-top: 10px;
-  }
+    /* İçkilər seçimləri */
+    .menu-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+      gap: 20px;
+      padding: 20px;
+    }
 
+    .menu-button {
+      position: relative;
+      width: 90%;
+      max-width: 420px;
+      height: 160px;
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      background-color: #fffbe6;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .menu-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .menu-button .bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+
+    .menu-button .label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      z-index: 2;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 600px) {
+      .menu-button {
+        height: 130px;
+      }
+
+      .menu-button .label {
+        font-size: 20px;
+      }
+
+      .nom-container {
+        font-size: 32px;
+      }
+
+      .logo-circle {
+        width: 85px;
+        height: 85px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="header">Dessert</div>
 
-  <div class="menu">
-    <div class="item">
-      <img src="https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2024/09/THUMB-VIDEO-2_rev1-56.jpeg?im=Resize,width=742;" alt="Tıramısu">
-      <p>Tıramısu</p>
-      <span>6.00 AZN</span>
-    </div>
-    <div class="item">
-      <img src="https://www.gammaz.com.tr/wp-content/uploads/2023/09/san-sebastian-cheesecake-tarifi.jpg" alt="San Sebastian">
-      <p>San Sebastian</p>
-      <span>6.00/7.00 AZN</span>
-    </div>
-    <div class="item">
-      <img src="https://www.jocooks.com/wp-content/uploads/2018/11/cheesecake-1-22.jpg" alt="Cheesecake">
-      <p>Cheesecake</p>
-      <span>6.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://theoasiscafe.com/cdn/shop/products/DSC06127.jpg?v=1568233993" alt="Napoleon">
-        <p>Napoleon</p>
-        <span>6.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://news.milli.az/media/2017/12/22/610490.jpg" alt="Ballı Tort">
-        <p>Ballı Tort</p>
-        <span>6.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://img.freepik.com/premium-photo/strawberry-magnolia-dessert-with-cream-strawberry-filling-stone-background-world-cuisine-delicacies-close-up_659681-6085.jpg" alt="Magnolia">
-        <p>Magnolia</p>
-        <span>7.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_R0vApfxTmSYlUUZVZvsctwbEQtkrLxlZPw&s" alt="Kurabiyə (4 ədəd)">
-        <p>Kurabiyə (4 ədəd)</p>
-        <span>2.50 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://i.ytimg.com/vi/wCv1_0sBLAw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBBBOrycedc83v_L45ePB-OvJ9kxg" alt="Snickers mürəbbəsi">
-        <p>Snickers mürəbbəsi</p>
-        <span>4.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaZBDySdb7k8Qe0GH4qdoVegtiop9QQBu62g&s" alt="Kokos mürəbbəsi">
-        <p>Kokos mürəbbəsi</p>
-        <span>4.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://i.ytimg.com/vi/lXNxDnjYT60/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCX93eMBMpUhxlWfEDKdHBe0bgRUw" alt="Çiyələk mürəbbəsi">
-        <p>Çiyələk mürəbbəsi</p>
-        <span>3.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://qebulol.az/wp-content/uploads/2024/09/24144598956781248494-1.png" alt="Ağ Gilas mürəbbəsi">
-        <p>Ağ Gilas mürəbbəsi</p>
-        <span>3.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt2GM1KlKERBV0taGSnMoAqV1lEE8ONx1LGg&s" alt="Çərəz Mix">
-        <p>Çərəz Mix</p>
-        <span>7.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://farukgulluogluo2.dslink.co/resimler/urunler/347-porsiyon-dondurma-4-top.jpg" alt="Top Dondurma">
-        <p>Top Dondurma</p>
-        <p>(vanil, şokolad, çiyələk)</p>
-        <span>4.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://fed.az/upload/news/3753605.jpeg" alt="Mövsüm Meyvə">
-        <p>Mövsüm Meyvə</p>
-        <span>10.00 AZN</span>
+  <!-- Üst hissə və logo -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <div class="nom-container">NOM</div>
+
+      <div class="logo-circle">
+        <img src="img/IMG_7677 (1).PNG" alt="Logo">
+      </div>
+
+      <div class="nom-container">NOM</div>
     </div>
   </div>
+
+  <!-- İçkilər seçimləri -->
+  <div class="menu-options">
+
+    <!-- Kofe -->
+    <a href="index(2).html" class="menu-button">
+      <img src="img/coffee.jpg" class="bg-img" alt="İsti Yeməklər">
+      <div class="label">İsti Yeməklər</div>
+    </a>
+
+    <!-- Soyuq İçkilər -->
+    <a href="index(3).html" class="menu-button">
+      <img src="img/juice.jpg" class="bg-img" alt="Burgerlər">
+      <div class="label">Burgerlər</div>
+    </a>
+
+  </div>
+
 </body>
 </html>
