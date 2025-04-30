@@ -1,200 +1,177 @@
 <!DOCTYPE html>
-<html lang="az">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>İsti İçkilər</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Coffee</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      margin: 0;
-      font-family: cursive;
-      background-color: #fdfdfd;
-      animation: glow 5s infinite alternate;
-    }
+  body {
+    margin: 0;
+    font-family: cursive;
+    background-color: #fdfdfd;
+    animation: glow 5s infinite alternate;
+  }
 
-    @keyframes glow {
-      0% { background-color: #fdfdfd; }
-      100% { background-color: #f5f5f5; box-shadow: inset 0 0 20px #ffcc0055; }
-    }
+  @keyframes glow {
+    0% { background-color: #fdfdfd; }
+    100% { background-color: #f5f5f5; box-shadow: inset 0 0 20px #ffcc0055; }
+  }
+  
+  .header {
+    background: #ffcc00;
+    text-align: center;
+    font-family: 'Pacifico',cursive;
+    font-size: 48px;
+    padding: 20px;
+    margin: 0 auto;
+    font-weight: bold;
+    color: rgb(9, 9, 9);
+    text-shadow: 0 0 10px #fff;
+    border: 2px solid white;
+    box-shadow: 0 0 20px white, 0 0 40px #ffcc00;
+    line-height: 40px;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 10px #f5ddf5, 0 0 20px #f5ddf5, 0 0 30px #f5ddf5, 0 0 40px #f5ddf5;
+  }
 
-    .header {
-      background: #ffcc00;
-      text-align: center;
-      font-family: 'Pacifico', cursive;
-      font-size: 48px;
-      padding: 20px;
-      margin: 0 auto;
-      font-weight: bold;
-      color: rgb(9, 9, 9);
-      text-shadow: 0 0 10px #fff;
-      border: 2px solid white;
-      box-shadow: 0 0 20px white, 0 0 40px #ffcc00;
-      line-height: 40px;
-      border-bottom-left-radius: 50% 20%;
-      border-bottom-right-radius: 50% 20%;
-      position: relative;
-      overflow: hidden;
-      text-shadow: 0 0 10px #f5ddf5, 0 0 20px #f5ddf5, 0 0 30px #f5ddf5, 0 0 40px #f5ddf5;
-    }
+  .header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+    animation: slide 2s infinite;
+  }
 
-    .header::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-      animation: slide 2s infinite;
-    }
+  @keyframes slide {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .item {
+    background: #efd5a4;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    color: rgb(12, 12, 12);
+    padding: 20px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: box-shadow 0.3s ease;
+    font-weight: bold;
+  }
 
-    @keyframes slide {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-
-    .menu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .menu-button {
-      background: #efd5a4;
-      width: 90%;
-      max-width: 450px;
-      border-radius: 20px;
-      overflow: hidden;
-      text-align: center;
-      color: rgb(12, 12, 12);
-      padding: 20px 0;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      transition: box-shadow 0.3s ease;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .menu-button:hover {
-      box-shadow: 0 0 20px #ffcc00, 0 0 30px #fff;
-    }
-
-    .menu-button img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 20px 20px 0 0;
-    }
-
-    .menu-button p {
-      font-size: 28px;
-      margin: 10px 0 0;
-      font-weight: bold;
-    }
-
-    .menu-button span {
-      font-size: 24px;
-      font-weight: bold;
-      color: #ffcc00; /* Qiymət üçün sarı rəng */
-      margin-top: 10px;
-      display: inline-block;
-    }
-
-    @media (max-width: 600px) {
-      .menu-button {
-        height: 140px;
-      }
-
-      .menu-button p {
-        font-size: 24px;
-      }
-
-      .header {
-        font-size: 30px;
-      }
-    }
-  </style>
+  .item:hover {
+    box-shadow: 0 0 20px #ffcc00, 0 0 30px #fff;
+  }
+  
+  .item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .item p {
+    font-size: 28px;
+    margin: 10px 0 0;
+    font-weight: bold;
+  }
+</style>
 </head>
 <body>
-  <div class="header">İsti İçkilər</div>
+  <div class="header">İçkilər Menyusu</div>
 
   <div class="menu">
-    <div class="menu-button">
-      <img src="img/espresso.jpg" alt="Espresso">
-      <p>Espresso</p>
-      <span>3.00 AZN</span>
-    </div>
-    <div class="menu-button">
-      <img src="img/latte.jpg" alt="Latte">
-      <p>Latte/sirop</p>
-      <span>7.00 AZN</span>
-    </div>
-    <div class="menu-button">
-      <img src="img/cappuccino.jpg" alt="Cappuccino">
-      <p>Cappuccino</p>
-      <span>6.00 AZN</span>
-    </div>
-    <div class="menu-button">
-      <img src="img/mocha.jpg" alt="Mocha">
-      <p>Mocha</p>
-      <span>6.00 AZN</span>
-    </div>
-    <div class="menu-button">
+    <div class="item">
       <img src="img/americano.jpg" alt="Americano">
       <p>Americano</p>
       <span>4.00 AZN</span>
     </div>
-    <div class="menu-button">
-      <img src="img/americano.jpg" alt="Raff">
+    <div class="item">
+      <img src="img/espresso.jpg" alt="Espresso">
+      <p>Espresso</p>
+      <span>3.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="img/cappuccino.jpg" alt="Cappuccino">
+      <p>Cappuccino</p>
+      <span>6.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="img/latte.jpg" alt="Latte/sirop">
+      <p>Latte/sirop</p>
+      <span>7.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="img/raff.jpg" alt="Raff">
       <p>Raff</p>
       <span>8.00 AZN</span>
     </div>
-    <div class="menu-button">
-      <img src="img/americano.jpg" alt="Milkshake">
-      <p>Milkshake</p>
+    <div class="item">
+      <img src="img/mocha.jpg" alt="Mocca">
+      <p>Mocca</p>
       <span>6.00 AZN</span>
     </div>
-    <div class="menu-button">
-      <img src="img/americano.jpg" alt="Mojito classic">
-      <p>Mojito classic</p>
+    <div class="item">
+      <img src="img/milkshake.jpg" alt="Milkshake (Çiyələk, Şokolad, Banan, Vanil)">
+      <p>Milkshake (Çiyələk, Şokolad, Banan, Vanil)</p>
+      <span>6.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="img/mojito-classic.jpg" alt="Mojito Classic">
+      <p>Mojito Classic</p>
       <span>5.00 AZN</span>
     </div>
-    <div class="menu-button">
-      <img src="img/americano.jpg" alt="Mojito enerji">
-      <p>Mojito enerji</p>
+    <div class="item">
+      <img src="img/mojito-enerji.jpg" alt="Mojito Enerji">
+      <p>Mojito Enerji</p>
       <span>6.00 AZN</span>
     </div>
-    <div class="menu-button">
-      <img src="img/americano.jpg" alt="Mojito red">
-      <p>Mojito red</p>
+    <div class="item">
+      <img src="img/mojito-red.jpg" alt="Mojito Red">
+      <p>Mojito Red</p>
       <span>5.00 AZN</span>
     </div>
-    <div class="menu-button">
-      <img src="img/americano.jpg" alt="Buzlu mix">
-      <p>Buzlu mix</p>
+    <div class="item">
+      <img src="img/buzlu-mix.jpg" alt="Buzlu Mix">
+      <p>Buzlu Mix</p>
       <span>6.00 AZN</span>
     </div>
-    <div class="menu-button">
-      <img src="img/americano.jpg" alt="Çay çaynik">
-      <p>Çay çaynik</p>
-      <span>5.00 AZN</span>
-    </div>
-    <div class="menu-button">
-      <img src="img/americano.jpg" alt="Çay çaynik jasmin">
-      <p>Çay çaynik (jasmin)</p>
-      <span>6.00 AZN</span>
-    </div>
-    <div class="menu-button">
-      <img src="img/americano.jpg" alt="Çay fincan">
-      <p>Çay fincan</p>
+    <div class="item">
+      <img src="img/cay-fincan.jpg" alt="Çay Fincan">
+      <p>Çay Fincan</p>
       <span>2.00 AZN</span>
     </div>
-    <div class="menu-button">
-      <img src="img/americano.jpg" alt="Çay fincan jasmin">
-      <p>Çay fincan (jasmin)</p>
+    <div class="item">
+      <img src="img/cay-fincan-jasmin.jpg" alt="Çay Fincan (Jasmin)">
+      <p>Çay Fincan (Jasmin)</p>
       <span>2.50 AZN</span>
+    </div>
+    <div class="item">
+      <img src="img/cay-caynik.jpg" alt="Çay Çaynik">
+      <p>Çay Çaynik</p>
+      <span>5.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="img/cay-caynik-jasmin.jpg" alt="Çay Çaynik (Jasmin)">
+      <p>Çay Çaynik (Jasmin)</p>
+      <span>6.00 AZN</span>
     </div>
   </div>
 </body>
