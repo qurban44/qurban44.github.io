@@ -8,21 +8,21 @@
   <style>
   body {
     margin: 0;
-    font-family: cursive;
-    background-color: #fdfdfd;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
     animation: glow 5s infinite alternate;
   }
 
   @keyframes glow {
-    0% { background-color: #fdfdfd; }
-    100% { background-color: #f5f5f5; box-shadow: inset 0 0 20px #ffcc0055; }
+    0% { background-color: #f8f8f8; }
+    100% { background-color: #fff9e6; box-shadow: inset 0 0 20px #ffcc0055; }
   }
 
   .header {
     background: #ffcc00;
     text-align: center;
     font-family: 'Pacifico', cursive;
-    font-size: 48px;
+    font-size: 50px;
     padding: 20px;
     margin: 0 auto;
     font-weight: bold;
@@ -35,7 +35,6 @@
     border-bottom-right-radius: 50% 20%;
     position: relative;
     overflow: hidden;
-    text-shadow: 0 0 10px #f5ddf5, 0 0 20px #f5ddf5, 0 0 30px #f5ddf5, 0 0 40px #f5ddf5;
   }
 
   .header::after {
@@ -56,34 +55,31 @@
 
   .menu {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 sütunlu düzülüş */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* 2 sütunlu düzülüş */
+    gap: 15px;
     padding: 20px;
+    justify-items: center;
   }
 
   @media (max-width: 768px) {
     .menu {
-      grid-template-columns: repeat(2, 1fr); /* 2 sütunlu düzülüş mobil üçün */
-    }
-  }
-
-  @media (max-width: 480px) {
-    .menu {
-      grid-template-columns: 1fr; /* 1 sütunlu düzülüş telefon üçün */
+      grid-template-columns: repeat(1, 1fr); /* 1 sütunlu düzülüş mobil üçün */
     }
   }
 
   .item {
-    background: #efd5a4;
-    width: 100%;
-    border-radius: 20px;
+    background: #fff3e0;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 15px;
     overflow: hidden;
     text-align: center;
-    color: rgb(12, 12, 12);
-    padding: 20px 0;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    color: rgb(35, 35, 35);
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
     transition: box-shadow 0.3s ease;
     font-weight: bold;
+    font-size: 18px;
   }
 
   .item:hover {
@@ -94,19 +90,28 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 20px 20px 0 0;
+    border-radius: 15px 15px 0 0;
   }
 
   .item p {
-    font-size: 28px;
+    font-size: 22px;
     margin: 10px 0 0;
-    font-weight: bold;
+    font-weight: 600;
+    color: #ff6600;
   }
 
   .item span {
     font-size: 20px;
-    color: #ffcc00;
+    color: #ff6600;
+    font-weight: 600;
   }
+
+  .item .description {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+  }
+
   </style>
 </head>
 <body>
