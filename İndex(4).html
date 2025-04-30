@@ -5,19 +5,26 @@
   <title>Dessert Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: #fff8dc;
+      font-family: cursive;
+      background-color: #fdfdfd;
     }
 
     .header {
       background: #ffcc00;
       text-align: center;
       font-family: 'Pacifico', cursive;
-      font-size: 40px;
+      font-size: 48px;
       padding: 20px;
-      color: #111;
+      font-weight: bold;
+      color: rgb(9, 9, 9);
+      text-shadow: 0 0 10px #f5ddf5;
+      border: 2px solid white;
       box-shadow: 0 0 20px white, 0 0 40px #ffcc00;
       border-bottom-left-radius: 50% 20%;
       border-bottom-right-radius: 50% 20%;
@@ -25,70 +32,71 @@
 
     .menu {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       padding: 20px;
     }
 
-    @media (max-width: 900px) {
-      .menu {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .menu {
         grid-template-columns: 1fr;
       }
     }
 
     .item {
-      background: #fff3d1;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      background: #efd5a4;
+      border-radius: 20px;
       overflow: hidden;
       text-align: center;
-      padding-bottom: 10px;
-      position: relative;
+      color: rgb(12, 12, 12);
+      padding-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+
+    .item:hover {
+      transform: scale(1.03);
     }
 
     .item img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
     }
 
     .item p {
+      font-size: 20px;
       margin: 10px 0 5px;
-      font-weight: bold;
-      font-size: 18px;
     }
 
     .item span {
-      font-size: 16px;
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
 
-    .controls {
+    .buttons {
       display: flex;
       justify-content: center;
-      align-items: center;
-      margin-top: 10px;
       gap: 10px;
+      align-items: center;
     }
 
-    .controls button {
-      background: #ffcc00;
+    .buttons button {
+      width: 32px;
+      height: 32px;
+      font-size: 20px;
+      font-weight: bold;
       border: none;
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      font-size: 20px;
       cursor: pointer;
-      transition: 0.3s;
+      background-color: #ffcc00;
+      color: black;
+      transition: background 0.2s;
     }
 
-    .controls button:hover {
-      background: #e6b800;
+    .buttons button:hover {
+      background-color: #e0b800;
     }
 
     .cart {
@@ -96,98 +104,95 @@
       top: 20px;
       right: 20px;
       background: #fff;
-      padding: 15px;
+      border: 2px solid #ffcc00;
       border-radius: 10px;
+      padding: 10px 20px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      z-index: 1000;
-    }
-
-    .cart h3 {
-      margin: 0 0 10px;
-    }
-
-    .cart-items {
-      max-height: 200px;
-      overflow-y: auto;
-      font-size: 14px;
-    }
-
-    .cart-total {
-      margin-top: 10px;
       font-weight: bold;
+      z-index: 100;
     }
   </style>
 </head>
 <body>
   <div class="header">Dessert</div>
 
-  <div class="cart">
-    <h3>Səbət</h3>
-    <div class="cart-items" id="cart-items">Boşdur</div>
-    <div class="cart-total" id="cart-total">Cəmi: 0.00 AZN</div>
+  <div class="cart" id="cart">Səbət: 0.00 AZN</div>
+
+  <div class="menu" id="menu">
+    <div class="item" data-price="6.00">
+      <img src="https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2024/09/THUMB-VIDEO-2_rev1-56.jpeg" alt="Tıramısu">
+      <p>Tıramısu</p>
+      <span>6.00 AZN</span>
+      <div class="buttons">
+        <button onclick="decrease(this)">−</button>
+        <span class="count">0</span>
+        <button onclick="increase(this)">+</button>
+      </div>
+    </div>
+
+    <div class="item" data-price="7.00">
+      <img src="https://www.gammaz.com.tr/wp-content/uploads/2023/09/san-sebastian-cheesecake-tarifi.jpg" alt="San Sebastian">
+      <p>San Sebastian</p>
+      <span>7.00 AZN</span>
+      <div class="buttons">
+        <button onclick="decrease(this)">−</button>
+        <span class="count">0</span>
+        <button onclick="increase(this)">+</button>
+      </div>
+    </div>
+
+    <div class="item" data-price="6.00">
+      <img src="https://www.jocooks.com/wp-content/uploads/2018/11/cheesecake-1-22.jpg" alt="Cheesecake">
+      <p>Cheesecake</p>
+      <span>6.00 AZN</span>
+      <div class="buttons">
+        <button onclick="decrease(this)">−</button>
+        <span class="count">0</span>
+        <button onclick="increase(this)">+</button>
+      </div>
+    </div>
+
+    <div class="item" data-price="6.00">
+      <img src="https://theoasiscafe.com/cdn/shop/products/DSC06127.jpg?v=1568233993" alt="Napoleon">
+      <p>Napoleon</p>
+      <span>6.00 AZN</span>
+      <div class="buttons">
+        <button onclick="decrease(this)">−</button>
+        <span class="count">0</span>
+        <button onclick="increase(this)">+</button>
+      </div>
+    </div>
+
+    <!-- DİGƏR MƏHSULLARI BURAYA ƏLAVƏ ETMƏK OLAR -->
+
   </div>
 
-  <div class="menu" id="menu"></div>
-
   <script>
-    const products = [
-      { name: "Tıramısu", price: 6.00, img: "https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2024/09/THUMB-VIDEO-2_rev1-56.jpeg?im=Resize,width=742;" },
-      { name: "San Sebastian", price: 7.00, img: "https://www.gammaz.com.tr/wp-content/uploads/2023/09/san-sebastian-cheesecake-tarifi.jpg" },
-      { name: "Cheesecake", price: 6.00, img: "https://www.jocooks.com/wp-content/uploads/2018/11/cheesecake-1-22.jpg" },
-      { name: "Napoleon", price: 6.00, img: "https://theoasiscafe.com/cdn/shop/products/DSC06127.jpg?v=1568233993" },
-      { name: "Ballı Tort", price: 6.00, img: "https://news.milli.az/media/2017/12/22/610490.jpg" },
-      { name: "Magnolia", price: 7.00, img: "https://img.freepik.com/premium-photo/strawberry-magnolia-dessert-with-cream-strawberry-filling-stone-background-world-cuisine-delicacies-close-up_659681-6085.jpg" },
-      { name: "Kurabiyə (4 ədəd)", price: 2.50, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_R0vApfxTmSYlUUZVZvsctwbEQtkrLxlZPw&s" },
-      { name: "Snickers mürəbbəsi", price: 4.00, img: "https://i.ytimg.com/vi/wCv1_0sBLAw/hq720.jpg" },
-      { name: "Kokos mürəbbəsi", price: 4.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaZBDySdb7k8Qe0GH4qdoVegtiop9QQBu62g&s" },
-      { name: "Çiyələk mürəbbəsi", price: 3.00, img: "https://i.ytimg.com/vi/lXNxDnjYT60/hq720.jpg" },
-      { name: "Ağ Gilas mürəbbəsi", price: 3.00, img: "https://qebulol.az/wp-content/uploads/2024/09/24144598956781248494-1.png" },
-      { name: "Çərəz Mix", price: 7.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt2GM1KlKERBV0taGSnMoAqV1lEE8ONx1LGg&s" },
-      { name: "Top Dondurma (vanil, şokolad, çiyələk)", price: 4.00, img: "https://farukgulluogluo2.dslink.co/resimler/urunler/347-porsiyon-dondurma-4-top.jpg" },
-      { name: "Mövsüm Meyvə", price: 10.00, img: "https://fed.az/upload/news/3753605.jpeg" }
-    ];
-
-    const cart = {};
-    const menu = document.getElementById('menu');
-    const cartItems = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-
-    function updateCart() {
-      let html = '';
-      let total = 0;
-      for (let key in cart) {
-        const item = cart[key];
-        if (item.count > 0) {
-          html += `<div>${item.name} x${item.count} - ${(item.count * item.price).toFixed(2)} AZN</div>`;
-          total += item.count * item.price;
-        }
-      }
-      cartItems.innerHTML = html || "Boşdur";
-      cartTotal.textContent = `Cəmi: ${total.toFixed(2)} AZN`;
+    function increase(btn) {
+      const countSpan = btn.parentElement.querySelector('.count');
+      let count = parseInt(countSpan.textContent);
+      count++;
+      countSpan.textContent = count;
+      updateCart();
     }
 
-    products.forEach((product, index) => {
-      const div = document.createElement('div');
-      div.className = 'item';
-      div.innerHTML = `
-        <img src="${product.img}" alt="${product.name}">
-        <p>${product.name}</p>
-        <span>${product.price.toFixed(2)} AZN</span>
-        <div class="controls">
-          <button onclick="changeCount(${index}, -1)">-</button>
-          <span id="count-${index}">0</span>
-          <button onclick="changeCount(${index}, 1)">+</button>
-        </div>
-      `;
-      menu.appendChild(div);
-      cart[index] = { ...product, count: 0 };
-    });
-
-    function changeCount(index, delta) {
-      cart[index].count += delta;
-      if (cart[index].count < 0) cart[index].count = 0;
-      document.getElementById(`count-${index}`).textContent = cart[index].count;
+    function decrease(btn) {
+      const countSpan = btn.parentElement.querySelector('.count');
+      let count = parseInt(countSpan.textContent);
+      if (count > 0) count--;
+      countSpan.textContent = count;
       updateCart();
+    }
+
+    function updateCart() {
+      const items = document.querySelectorAll('.item');
+      let total = 0;
+      items.forEach(item => {
+        const count = parseInt(item.querySelector('.count').textContent);
+        const price = parseFloat(item.getAttribute('data-price'));
+        total += count * price;
+      });
+      document.getElementById('cart').textContent = `Səbət: ${total.toFixed(2)} AZN`;
     }
   </script>
 </body>
