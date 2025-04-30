@@ -24,16 +24,26 @@
     }
 
     .menu {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+      padding: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .menu {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .menu {
+        grid-template-columns: 1fr;
+      }
     }
 
     .item {
       background: #fff3d1;
-      width: 250px;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       overflow: hidden;
@@ -106,7 +116,6 @@
       margin-top: 10px;
       font-weight: bold;
     }
-
   </style>
 </head>
 <body>
@@ -118,9 +127,7 @@
     <div class="cart-total" id="cart-total">Cəmi: 0.00 AZN</div>
   </div>
 
-  <div class="menu" id="menu">
-    <!-- Bütün məhsullar JS ilə əlavə olunacaq -->
-  </div>
+  <div class="menu" id="menu"></div>
 
   <script>
     const products = [
@@ -141,7 +148,6 @@
     ];
 
     const cart = {};
-
     const menu = document.getElementById('menu');
     const cartItems = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
