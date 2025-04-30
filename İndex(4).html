@@ -49,22 +49,10 @@
 
   .menu {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Kompüterdə 3 sütunlu düzülüş */
+    grid-template-columns: repeat(2, 1fr); /* Hər ekran ölçüsündə 2 sütun */
     gap: 15px;
     padding: 20px;
     justify-items: center;
-  }
-
-  @media (max-width: 1024px) {
-    .menu {
-      grid-template-columns: repeat(2, 1fr); /* Telefonlarda 2 sütunlu düzülüş */
-    }
-  }
-
-  @media (max-width: 768px) {
-    .menu {
-      grid-template-columns: repeat(1, 1fr); /* Daha kiçik ekranlarda 1 sütunlu düzülüş */
-    }
   }
 
   .item {
