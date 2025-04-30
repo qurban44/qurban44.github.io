@@ -49,8 +49,8 @@
 
   .menu {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Hər ekran ölçüsündə 2 sütun */
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+    gap: 10px; /* Məhsullar arasındakı məsafəni azaldım */
     padding: 20px;
     justify-items: center;
   }
@@ -58,16 +58,16 @@
   .item {
     background: #fff3e0;
     width: 100%;
-    max-width: 220px; /* Məhsul ölçüsünü kiçiltmə */
-    border-radius: 12px;
+    max-width: 180px; /* Məhsul ölçüsünü bir az daha kiçiltmək */
+    border-radius: 10px;
     overflow: hidden;
     text-align: center;
     color: rgb(35, 35, 35);
     padding: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
     transition: box-shadow 0.3s ease;
     font-weight: bold;
-    font-size: 14px; /* Yazı ölçüsünü kiçiltmə */
+    font-size: 14px; /* Yazı ölçüsünü daha da kiçiltmək */
   }
 
   .item:hover {
@@ -76,20 +76,20 @@
 
   .item img {
     width: 100%;
-    height: 160px; /* Şəkil ölçüsünü kiçiltmə */
+    height: 140px; /* Şəkil ölçüsünü kiçiltmək */
     object-fit: cover;
-    border-radius: 12px 12px 0 0;
+    border-radius: 10px 10px 0 0;
   }
 
   .item p {
-    font-size: 18px;
+    font-size: 16px;
     margin: 10px 0 0;
     font-weight: 600;
     color: #ff6600;
   }
 
   .item span {
-    font-size: 16px;
+    font-size: 14px;
     color: #ff6600;
     font-weight: 600;
   }
