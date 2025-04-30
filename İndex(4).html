@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Desertlər</title>
+  <title>İçkilər</title>
   <!-- Coffee shop stili üçün font -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
@@ -69,21 +69,21 @@
       z-index: 1;
     }
 
-    /* Desertlər seçimləri */
+    /* İçkilər seçimləri */
     .menu-options {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
       gap: 20px;
       padding: 20px;
-      justify-items: center;
-      margin-top: 50px;
     }
 
     .menu-button {
       position: relative;
       width: 90%;
-      max-width: 180px;
-      height: 250px;
+      max-width: 420px;
+      height: 160px;
       border-radius: 16px;
       overflow: hidden;
       text-decoration: none;
@@ -110,23 +110,19 @@
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
-      font-size: 18px;
+      font-size: 24px;
       font-weight: bold;
       z-index: 2;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     }
 
     @media (max-width: 600px) {
-      .menu-options {
-        grid-template-columns: 1fr; /* Telefonlarda yalnız 1 sütun */
-      }
-
       .menu-button {
-        height: 200px;
+        height: 130px;
       }
 
       .menu-button .label {
-        font-size: 16px;
+        font-size: 20px;
       }
 
       .nom-container {
@@ -155,43 +151,19 @@
     </div>
   </div>
 
-  <!-- Desertlər seçimləri -->
+  <!-- İçkilər seçimləri -->
   <div class="menu-options">
 
-    <!-- Tıramısu -->
-    <a href="#" class="menu-button">
-      <img src="https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2024/09/THUMB-VIDEO-2_rev1-56.jpeg?im=Resize,width=742;" class="bg-img" alt="Tıramısu">
-      <div class="label">Tıramısu</div>
+    <!-- Kofe -->
+    <a href="index(2).html" class="menu-button">
+      <img src="img/coffee.jpg" class="bg-img" alt="Kofe">
+      <div class="label">İsti İçkilər</div>
     </a>
 
-    <!-- San Sebastian -->
-    <a href="#" class="menu-button">
-      <img src="https://www.gammaz.com.tr/wp-content/uploads/2023/09/san-sebastian-cheesecake-tarifi.jpg" class="bg-img" alt="San Sebastian">
-      <div class="label">San Sebastian</div>
-    </a>
-
-    <!-- Cheesecake -->
-    <a href="#" class="menu-button">
-      <img src="https://www.jocooks.com/wp-content/uploads/2018/11/cheesecake-1-22.jpg" class="bg-img" alt="Cheesecake">
-      <div class="label">Cheesecake</div>
-    </a>
-
-    <!-- Napoleon -->
-    <a href="#" class="menu-button">
-      <img src="https://theoasiscafe.com/cdn/shop/products/DSC06127.jpg?v=1568233993" class="bg-img" alt="Napoleon">
-      <div class="label">Napoleon</div>
-    </a>
-
-    <!-- Ballı Tort -->
-    <a href="#" class="menu-button">
-      <img src="https://news.milli.az/media/2017/12/22/610490.jpg" class="bg-img" alt="Ballı Tort">
-      <div class="label">Ballı Tort</div>
-    </a>
-
-    <!-- Magnolia -->
-    <a href="#" class="menu-button">
-      <img src="https://img.freepik.com/premium-photo/strawberry-magnolia-dessert-with-cream-strawberry-filling-stone-background-world-cuisine-delicacies-close-up_659681-6085.jpg" class="bg-img" alt="Magnolia">
-      <div class="label">Magnolia</div>
+    <!-- Soyuq İçkilər -->
+    <a href="index(3).html" class="menu-button">
+      <img src="img/juice.jpg" class="bg-img" alt="Soyuq İçkilər">
+      <div class="label">Soyuq İçkilər</div>
     </a>
 
   </div>
