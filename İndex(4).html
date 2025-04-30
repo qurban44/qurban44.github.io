@@ -1,175 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
   <meta charset="UTF-8">
-  <title>Coffee</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Dessert Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-  body {
-    margin: 0;
-    font-family: cursive;
-    background-color: #fdfdfd;
-    animation: glow 5s infinite alternate;
-  }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fff8dc;
+    }
 
-  @keyframes glow {
-    0% { background-color: #fdfdfd; }
-    100% { background-color: #f5f5f5; box-shadow: inset 0 0 20px #ffcc0055; }
-  }
-  
-  
-  .header {
-    background: #ffcc00;
-    text-align: center;
-    font-family: 'Pacifico',cursive;
-    font-size: 48px;
-    padding: 20px;
-    margin: 0 auto;
-    font-weight: bold;
-    color: rgb(9, 9, 9);
-    text-shadow: 0 0 10px #fff;
-    border: 2px solid white;
-    box-shadow: 0 0 20px white, 0 0 40px #ffcc00;
-    line-height: 40px;
-    border-bottom-left-radius: 50% 20%;
-    border-bottom-right-radius: 50% 20%;
-    position: relative;
-    overflow: hidden;
-    text-shadow: 0 0 10px #f5ddf5, 0 0 20px #f5ddf5, 0 0 30px #f5ddf5, 0 0 40px #f5ddf5;
-  }
+    .header {
+      background: #ffcc00;
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 40px;
+      padding: 20px;
+      color: #111;
+      box-shadow: 0 0 20px white, 0 0 40px #ffcc00;
+      border-bottom-left-radius: 50% 20%;
+      border-bottom-right-radius: 50% 20%;
+    }
 
-  .header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-    animation: slide 2s infinite;
-  }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
 
-  @keyframes slide {
-    0% { left: -100%; }
-    100% { left: 100%; }
-  }
-  
-  .menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .item {
-    background: #efd5a4;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 20px;
-    overflow: hidden;
-    text-align: center;
-    color: rgb(12, 12, 12);
-    padding: 20px 0;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    transition: box-shadow 0.3s ease;
-    font-weight: bold;
-  }
+    .item {
+      background: #fff3d1;
+      width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 10px;
+      position: relative;
+    }
 
-  .item:hover {
-    box-shadow: 0 0 20px #ffcc00, 0 0 30px #fff;
-  }
-  
-  .item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 20px 20px 0 0;
-  }
-  
-  .item p {
-    font-size: 28px;
-    margin: 10px 0 0;
-    font-weight: bold;
-  }
-</style>
+    .item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .item p {
+      margin: 10px 0 5px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .item span {
+      font-size: 16px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .controls button {
+      background: #ffcc00;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .controls button:hover {
+      background: #e6b800;
+    }
+
+    .cart {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    .cart h3 {
+      margin: 0 0 10px;
+    }
+
+    .cart-items {
+      max-height: 200px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    .cart-total {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+  </style>
 </head>
 <body>
   <div class="header">Dessert</div>
 
-  <div class="menu">
-    <div class="item">
-      <img src="https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2024/09/THUMB-VIDEO-2_rev1-56.jpeg?im=Resize,width=742;" alt="Tıramısu">
-      <p>Tıramısu</p>
-      <span>6.00 AZN</span>
-    </div>
-    <div class="item">
-      <img src="https://www.gammaz.com.tr/wp-content/uploads/2023/09/san-sebastian-cheesecake-tarifi.jpg" alt="San Sebastian">
-      <p>San Sebastian</p>
-      <span>6.00/7.00 AZN</span>
-    </div>
-    <div class="item">
-      <img src="https://www.jocooks.com/wp-content/uploads/2018/11/cheesecake-1-22.jpg" alt="Cheesecake">
-      <p>Cheesecake</p>
-      <span>6.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://theoasiscafe.com/cdn/shop/products/DSC06127.jpg?v=1568233993" alt="Napoleon">
-        <p>Napoleon</p>
-        <span>6.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://news.milli.az/media/2017/12/22/610490.jpg" alt="Ballı Tort">
-        <p>Ballı Tort</p>
-        <span>6.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://img.freepik.com/premium-photo/strawberry-magnolia-dessert-with-cream-strawberry-filling-stone-background-world-cuisine-delicacies-close-up_659681-6085.jpg" alt="Magnolia">
-        <p>Magnolia</p>
-        <span>7.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_R0vApfxTmSYlUUZVZvsctwbEQtkrLxlZPw&s" alt="Kurabiyə (4 ədəd)">
-        <p>Kurabiyə (4 ədəd)</p>
-        <span>2.50 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://i.ytimg.com/vi/wCv1_0sBLAw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBBBOrycedc83v_L45ePB-OvJ9kxg" alt="Snickers mürəbbəsi">
-        <p>Snickers mürəbbəsi</p>
-        <span>4.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaZBDySdb7k8Qe0GH4qdoVegtiop9QQBu62g&s" alt="Kokos mürəbbəsi">
-        <p>Kokos mürəbbəsi</p>
-        <span>4.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://i.ytimg.com/vi/lXNxDnjYT60/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCX93eMBMpUhxlWfEDKdHBe0bgRUw" alt="Çiyələk mürəbbəsi">
-        <p>Çiyələk mürəbbəsi</p>
-        <span>3.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://qebulol.az/wp-content/uploads/2024/09/24144598956781248494-1.png" alt="Ağ Gilas mürəbbəsi">
-        <p>Ağ Gilas mürəbbəsi</p>
-        <span>3.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt2GM1KlKERBV0taGSnMoAqV1lEE8ONx1LGg&s" alt="Çərəz Mix">
-        <p>Çərəz Mix</p>
-        <span>7.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://farukgulluogluo2.dslink.co/resimler/urunler/347-porsiyon-dondurma-4-top.jpg" alt="Top Dondurma">
-        <p>Top Dondurma</p>
-        <p>(vanil, şokolad, çiyələk)</p>
-        <span>4.00 AZN</span>
-    </div>
-    <div class="item">
-        <img src="https://fed.az/upload/news/3753605.jpeg" alt="Mövsüm Meyvə">
-        <p>Mövsüm Meyvə</p>
-        <span>10.00 AZN</span>
-    </div>
+  <div class="cart">
+    <h3>Səbət</h3>
+    <div class="cart-items" id="cart-items">Boşdur</div>
+    <div class="cart-total" id="cart-total">Cəmi: 0.00 AZN</div>
   </div>
+
+  <div class="menu" id="menu">
+    <!-- Bütün məhsullar JS ilə əlavə olunacaq -->
+  </div>
+
+  <script>
+    const products = [
+      { name: "Tıramısu", price: 6.00, img: "https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2024/09/THUMB-VIDEO-2_rev1-56.jpeg?im=Resize,width=742;" },
+      { name: "San Sebastian", price: 7.00, img: "https://www.gammaz.com.tr/wp-content/uploads/2023/09/san-sebastian-cheesecake-tarifi.jpg" },
+      { name: "Cheesecake", price: 6.00, img: "https://www.jocooks.com/wp-content/uploads/2018/11/cheesecake-1-22.jpg" },
+      { name: "Napoleon", price: 6.00, img: "https://theoasiscafe.com/cdn/shop/products/DSC06127.jpg?v=1568233993" },
+      { name: "Ballı Tort", price: 6.00, img: "https://news.milli.az/media/2017/12/22/610490.jpg" },
+      { name: "Magnolia", price: 7.00, img: "https://img.freepik.com/premium-photo/strawberry-magnolia-dessert-with-cream-strawberry-filling-stone-background-world-cuisine-delicacies-close-up_659681-6085.jpg" },
+      { name: "Kurabiyə (4 ədəd)", price: 2.50, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_R0vApfxTmSYlUUZVZvsctwbEQtkrLxlZPw&s" },
+      { name: "Snickers mürəbbəsi", price: 4.00, img: "https://i.ytimg.com/vi/wCv1_0sBLAw/hq720.jpg" },
+      { name: "Kokos mürəbbəsi", price: 4.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaZBDySdb7k8Qe0GH4qdoVegtiop9QQBu62g&s" },
+      { name: "Çiyələk mürəbbəsi", price: 3.00, img: "https://i.ytimg.com/vi/lXNxDnjYT60/hq720.jpg" },
+      { name: "Ağ Gilas mürəbbəsi", price: 3.00, img: "https://qebulol.az/wp-content/uploads/2024/09/24144598956781248494-1.png" },
+      { name: "Çərəz Mix", price: 7.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt2GM1KlKERBV0taGSnMoAqV1lEE8ONx1LGg&s" },
+      { name: "Top Dondurma (vanil, şokolad, çiyələk)", price: 4.00, img: "https://farukgulluogluo2.dslink.co/resimler/urunler/347-porsiyon-dondurma-4-top.jpg" },
+      { name: "Mövsüm Meyvə", price: 10.00, img: "https://fed.az/upload/news/3753605.jpeg" }
+    ];
+
+    const cart = {};
+
+    const menu = document.getElementById('menu');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    function updateCart() {
+      let html = '';
+      let total = 0;
+      for (let key in cart) {
+        const item = cart[key];
+        if (item.count > 0) {
+          html += `<div>${item.name} x${item.count} - ${(item.count * item.price).toFixed(2)} AZN</div>`;
+          total += item.count * item.price;
+        }
+      }
+      cartItems.innerHTML = html || "Boşdur";
+      cartTotal.textContent = `Cəmi: ${total.toFixed(2)} AZN`;
+    }
+
+    products.forEach((product, index) => {
+      const div = document.createElement('div');
+      div.className = 'item';
+      div.innerHTML = `
+        <img src="${product.img}" alt="${product.name}">
+        <p>${product.name}</p>
+        <span>${product.price.toFixed(2)} AZN</span>
+        <div class="controls">
+          <button onclick="changeCount(${index}, -1)">-</button>
+          <span id="count-${index}">0</span>
+          <button onclick="changeCount(${index}, 1)">+</button>
+        </div>
+      `;
+      menu.appendChild(div);
+      cart[index] = { ...product, count: 0 };
+    });
+
+    function changeCount(index, delta) {
+      cart[index].count += delta;
+      if (cart[index].count < 0) cart[index].count = 0;
+      document.getElementById(`count-${index}`).textContent = cart[index].count;
+      updateCart();
+    }
+  </script>
 </body>
 </html>
