@@ -4,37 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>İçkilər</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Coffee shop stili üçün font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #fffefc, #f7f3e9);
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf3;
       color: #333;
-      overflow-x: hidden;
     }
 
+    /* Üst hissə - sarı xətt və logo */
     .top-bar {
-      background: linear-gradient(to right, #f4c531, #ffdd95);
-      padding: 30px 20px 60px;
-      text-align: center;
-      border-bottom: 4px solid #f4c531;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
       position: relative;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(135deg, #FFD700, #FFF8B5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom-left-radius: 50% 20%;
+      border-bottom-right-radius: 50% 20%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .top-bar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1100px;
     }
 
     .logo-circle {
       width: 100px;
       height: 100px;
-      margin: 0 auto;
       border-radius: 50%;
       background-color: white;
-      border: 6px solid #f4c531;
+      border: 6px solid #FFD700;
       display: flex;
       align-items: center;
       justify-content: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       overflow: hidden;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
 
     .logo-circle img {
@@ -43,60 +59,47 @@
       object-fit: cover;
     }
 
-    .nom-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 42px;
+    .nom-container {
+      font-family: 'Pacifico', cursive;
+      font-size: 38px;
       color: #5c4033;
-      margin-top: 15px;
-      text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6),
+                   0 0 2px rgba(92, 64, 51, 0.2);
+      z-index: 1;
     }
 
     .menu-options {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 35px;
-      padding: 40px 20px;
+      margin-top: 70px;
+      gap: 30px;
+      padding: 20px;
     }
 
     .menu-button {
       position: relative;
       width: 95%;
       max-width: 500px;
-      height: 240px;
-      border-radius: 20px;
+      height: 200px;
+      border-radius: 16px;
       overflow: hidden;
       text-decoration: none;
-      background: linear-gradient(to right, #fff8e7, #fffbf3);
-      border: 2px solid transparent;
-      box-shadow: 0 0 0 rgba(0,0,0,0);
-      transition: all 0.3s ease-in-out;
-    }
-
-    .menu-button::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,220,100,0.6), rgba(255,240,200,0.3));
-      z-index: 1;
-      transition: 0.3s;
+      background-color: #fffbe6;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .menu-button:hover {
-      border-color: #fcd34d;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-      transform: translateY(-6px);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
     }
 
     .menu-button .bg-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.5);
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
+      filter: brightness(0.6);
     }
 
     .menu-button .label {
@@ -104,30 +107,29 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: #fff;
+      color: white;
       font-size: 28px;
-      font-weight: 600;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      font-weight: bold;
       z-index: 2;
-      font-family: 'Playfair Display', serif;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     }
 
     @media (max-width: 600px) {
       .menu-button {
-        height: 180px;
+        height: 160px;
       }
 
-      .label {
+      .menu-button .label {
         font-size: 22px;
       }
 
-      .nom-text {
-        font-size: 34px;
+      .nom-container {
+        font-size: 32px;
       }
 
       .logo-circle {
-        width: 80px;
-        height: 80px;
+        width: 85px;
+        height: 85px;
       }
     }
   </style>
@@ -136,10 +138,15 @@
 
   <!-- Üst hissə və logo -->
   <div class="top-bar">
-    <div class="logo-circle">
-      <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=200&q=80" alt="Logo">
+    <div class="top-bar-content">
+      <div class="nom-container">NOM</div>
+
+      <div class="logo-circle">
+        <img src="img/IMG_7677 (1).PNG" alt="Logo">
+      </div>
+
+      <div class="nom-container">NOM</div>
     </div>
-    <div class="nom-text">NOM</div>
   </div>
 
   <!-- İçkilər seçimləri -->
@@ -147,13 +154,13 @@
 
     <!-- İsti İçkilər -->
     <a href="index(2).html" class="menu-button">
-      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1000&q=80" class="bg-img" alt="İsti İçkilər">
+      <img src="https://images.pexels.com/videos/2715412/free-video-2715412.jpg" class="bg-img" alt="Kofe">
       <div class="label">İsti İçkilər</div>
     </a>
 
     <!-- Soyuq İçkilər -->
     <a href="index(3).html" class="menu-button">
-      <img src="https://images.unsplash.com/photo-1551022377-3b43c92f5b04?auto=format&fit=crop&w=1000&q=80" class="bg-img" alt="Soyuq İçkilər">
+      <img src="https://st4.depositphotos.com/1765432/22720/i/950/depositphotos_227208964-stock-photo-new-year-christmas-abstract-icy.jpg" class="bg-img" alt="Soyuq İçkilər">
       <div class="label">Soyuq İçkilər</div>
     </a>
 
