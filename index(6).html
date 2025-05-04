@@ -1,182 +1,264 @@
 <!DOCTYPE html>
-<html lang="az">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>yemekler</title>
-  <!-- Coffee shop stili üçün font -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Yemək Menyusu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fffaf3;
-      color: #333;
+      font-family: cursive;
+      background-color: #fdfdfd;
+      animation: glow 5s infinite alternate;
     }
 
-    /* Üst hissə - sarı xətt və logo */
-    .top-bar {
-      position: relative;
-      width: 100%;
-      height: 100px;
-      background: linear-gradient(135deg, #FFD700, #FFF8B5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    @keyframes glow {
+      0% { background-color: #fdfdfd; }
+      100% { background-color: #f5f5f5; box-shadow: inset 0 0 20px #ffcc0055; }
+    }
+
+    .header {
+      background: #ffcc00;
+      text-align: center;
+      font-size: 48px;
+      padding: 20px;
+      font-weight: bold;
+      color: rgb(9, 9, 9);
+      text-shadow: 0 0 10px #f5ddf5, 0 0 20px #f5ddf5, 0 0 30px #f5ddf5;
       border-bottom-left-radius: 50% 20%;
       border-bottom-right-radius: 50% 20%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
 
-    .top-bar-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 90%;
-      max-width: 1100px;
-    }
-
-    .logo-circle {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: white;
-      border: 6px solid #FFD700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .header::after {
+      content: "";
       position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      overflow: hidden;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo-circle img {
+      top: 0;
+      left: -100%;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+      animation: slide 2s infinite;
     }
 
-    .nom-container {
-      font-family: 'Pacifico', cursive;
-      font-size: 38px;
-      color: #5c4033;
-      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6),
-                   0 0 2px rgba(92, 64, 51, 0.2);
-      z-index: 1;
+    @keyframes slide {
+      0% { left: -100%; }
+      100% { left: 100%; }
     }
 
-    .menu-options {
+    .menu {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 70px;
-      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
       padding: 20px;
     }
 
-    .menu-button {
-      position: relative;
-      width: 95%;
-      max-width: 500px;
-      height: 200px;
-      border-radius: 16px;
-      overflow: hidden;
-      text-decoration: none;
-      background-color: #fffbe6;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .menu-button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-    }
-
-    .menu-button .bg-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.6);
-    }
-
-    .menu-button .label {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 28px;
+    .item {
+      background: #efd5a4;
+      width: 280px;
+      border-radius: 20px;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
       font-weight: bold;
-      z-index: 2;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     }
 
-    @media (max-width: 600px) {
-      .menu-button {
-        height: 160px;
-      }
+    .item:hover {
+      box-shadow: 0 0 20px #ffcc00, 0 0 30px #fff;
+    }
 
-      .menu-button .label {
-        font-size: 22px;
-      }
+    .item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
+    }
 
-      .nom-container {
-        font-size: 32px;
-      }
+    .item p {
+      font-size: 20px;
+      margin: 10px 0;
+    }
 
-      .logo-circle {
-        width: 85px;
-        height: 85px;
-      }
+    .item span {
+      font-size: 18px;
+      color: #222;
     }
   </style>
 </head>
 <body>
-
-  <!-- Üst hissə və logo -->
-  <div class="top-bar">
-    <div class="top-bar-content">
-      <div class="nom-container">NOM</div>
-
-      <div class="logo-circle">
-        <img src="img/IMG_7677 (1).PNG" alt="Logo">
-      </div>
-
-      <div class="nom-container">NOM</div>
+  <div class="header">Yemək Menyusu</div>
+  <div class="menu">
+    <div class="item">
+      <img src="" alt="Tek nəfərlik səhər yeməyi">
+      <p>Tek nəfərlik səhər yeməyi</p>
+      <span>8.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="" alt="2 nəfərlik səhər yeməyi">
+      <p>2 nəfərlik səhər yeməyi</p>
+      <span>14.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://folt.az/wp-content/uploads/2024/07/shutterstock_1089760742.jpg" alt="Sezar (toyuq)">
+      <p>Sezar (toyuq)</p>
+      <span>8.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://bashkent.az/public/products/1725456673sezar%20krevetkal%C4%B1.jpg" alt="Sezar (krivetka)">
+      <p>Sezar (krivetka)</p>
+      <span>11.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://threemanycooks.com/wp-content/uploads/2015/01/PopcornSalad.jpg" alt="Popcorn salat">
+      <p>Popcorn salat</p>
+      <span>11.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://sabalid.az/uploads/posts/2021-01/1612006986_merci-supu-507x285.jpg" alt="Mərci şorbası">
+      <p>Mərci şorbası</p>
+      <span>3.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://immunitet.az/uploads/posts/2017-07/1501398304_1484486097_gribnoy_sup_pyure_recept1.jpg" alt="Qaymaqlı göbələk şorbası">
+      <p>Qaymaqlı göbələk şorbası</p>
+      <span>4.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://cafecity.az/media/product_image/%D0%A2%D0%BE%D0%BC%D0%B0%D1%82%D0%BD%D1%8B%D0%B9-%D1%81%D1%83%D0%BF.jpg.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg" alt="Tomat şorbası">
+      <p>Tomat şorbası</p>
+      <span>4.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://folt.az/wp-content/uploads/2023/07/502-1416659557_stejk-iz-mramornoj-govyadiny-striplojn.jpg" alt="Langet (ət/toyuq)">
+      <p>Langet (ət/toyuq)</p>
+      <span>8.00/9.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://imageproxy.wolt.com/menu/menu-images/62862406e1fae9246daf45c2/948836bc-e008-11ec-9cbb-820f3f5833da_83a6f248_e008_11ec_853c_024f3f42b7b5_dsc_6860.jpeg" alt="Stroqanoff (ət/toyuq)">
+      <p>Stroqanoff (ət/toyuq)</p>
+      <span>8.00/9.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://www.sargento.com/assets/Uploads/Recipe/Image/CowboyChiliBurger__FocusFillWyIwLjAwIiwiMC4wMCIsMTEwMCw2NTdd.jpg" alt="Cowboy burger">
+      <p>Cowboy burger</p>
+      <span>9.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://simplehomeedit.com/wp-content/uploads/2022/09/Southern-Fried-Chicken-Burger-1.webp" alt="Crispy chicken burger">
+      <p>Crispy chicken burger</p>
+      <span>9.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://mcdonalds-menu.co.uk/wp-content/uploads/2022/07/cheeseburger-260x260.png">
+      <p>Cheese Pool burger</p>
+      <span>12.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://www.kitchensanctuary.com/wp-content/uploads/2024/07/Smash-Burgers-square-FS.jpg" alt="Smash burger beef">
+      <p>Smash burger beef</p>
+      <span>13.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://www.munchkintime.com/wp-content/uploads/2023/02/smash-burger_-11.jpg" alt="Smash burger chicken">
+      <p>Smash burger chicken</p>
+      <span>11.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="" alt="Puc max burger">
+      <p>Puc max burger</p>
+      <span>14.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="" alt="Fiesta menu">
+      <p>Fiesta menu</p>
+      <span>10.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="" alt="Chill’ meal">
+      <p>Chill’in meal</p>
+      <span>10.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="" alt="Chicky menu">
+      <p>Chicky menu</p>
+      <span>9.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="" alt="Delux menu">
+      <p>Delux menu</p>
+      <span>9.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="" alt="Ecc crispy menu">
+      <p>Ecc crispy menu</p>
+      <span>18.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="" alt="All star menu">
+      <p>All star menu</p>
+      <span>20.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="" alt="Fully taste">
+      <p>Fully taste</p>
+      <span>16.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvua0SdTDXTvfLL_WhGSNv9_jQV8qXrjS16Q&s" alt="Wrap king">
+      <p>Wrap king</p>
+      <span>18.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://ge.all.biz/img/ge/catalog/25095.jpeg" alt="Kartof fri">
+      <p>Kartof fri</p>
+      <span>4.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/club-sandwich-secondary-67c06a0f140c7.jpg" alt="Club sandwich">
+      <p>Club sandwich</p>
+      <span>9.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://semihomemaderecipes.com/wp-content/uploads/2023/07/Chicken-Caesar-Wraps-3-720x720.jpg" alt="Caesar roll">
+      <p>Caesar roll</p>
+      <span>8.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://content.jdmagicbox.com/comp/def_content/shawarma_centres/default-shawarma-centres-4.jpg" alt="Shaurma special">
+      <p>Shaurma special</p>
+      <span>7.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdbDU7ddgU6mMaUXjAqcJYjMa67SRmtHSj5w&s" alt="Nuggets">
+      <p>Nuggets</p>
+      <span>7.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://i.pinimg.com/736x/76/75/8d/76758db05d6f28371049370e0d643cec.jpg" alt="Chicken strips roll">
+      <p>Chicken strips roll</p>
+      <span>8.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBCnR5_0qieysxZby_KkcIFtDqox9aCRC7h66ZR1fwkd1evc29bXO5NPgqOAkL7QPtfvXNpmwka0yPdwSKHGUA4QmVv19n6qn7dwU_78w9oJXnYC7RvC87-Um10UlzApHNOq1jCWQiSxxG/s1600/crispychknparmtop.jpg" alt="Chicken strips with pasta">
+      <p>Chicken strips with pasta</p>
+      <span>12.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://laromapizzadallas.com/wp-content/uploads/2023/04/6d88062c-a687-41fe-9ee5-f6b306adabee.jpg" alt="Chicken strips with French fries">
+      <p>Chicken strips with French fries</p>
+      <span>11.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://www.allrecipes.com/thmb/m0KiYZYrkwEYdsycjazSbKSj8dI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/14140-baked-macaroni-and-cheese-DDMFS-4x3-011fdc9156644c7bb93c1888f5b993ab.jpg" alt="Mac cheese pasta">
+      <p>Mac cheese pasta</p>
+      <span>9.00 AZN</span>
+    </div>
+    <div class="item">
+      <img src="https://image.hurimg.com/i/hurriyet/75/750x422/5cc9affe0f254407e8627626.jpg" alt="Fettucine alfredo">
+      <p>Fettucine alfredo</p>
+      <span>11.00 AZN</span>
     </div>
   </div>
-
-  <!-- İçkilər seçimləri -->
-  <div class="menu-options">
-
-    <!-- İsti İçkilər -->
-    <a href="index(2).html" class="menu-button">
-      <img src="https://images.pexels.com/videos/2715412/free-video-2715412.jpg" class="bg-img" alt="Kofe">
-      <div class="label">Fast Food</div>
-    </a>
-
-    <!-- Soyuq İçkilər -->
-    <a href="index(3).html" class="menu-button">
-      <img src="https://st4.depositphotos.com/1765432/22720/i/950/depositphotos_227208964-stock-photo-new-year-christmas-abstract-icy.jpg" class="bg-img" alt="Soyuq İçkilər">
-      <div class="label">isti yemekler</div>
-    </a>
-    
-  <a href="index(3).html" class="menu-button">
-      <img src="https://st4.depositphotos.com/1765432/22720/i/950/depositphotos_227208964-stock-photo-new-year-christmas-abstract-icy.jpg" class="bg-img" alt="Soyuq İçkilər">
-      <div class="label">Kombo Setler</div>
-    </a>
-     <a href="index(3).html" class="menu-button">
-      <img src="https://st4.depositphotos.com/1765432/22720/i/950/depositphotos_227208964-stock-photo-new-year-christmas-abstract-icy.jpg" class="bg-img" alt="Soyuq İçkilər">
-      <div class="label">Salatlar</div>
-    </a>
-         <a href="index(3).html" class="menu-button">
-      <img src="https://st4.depositphotos.com/1765432/22720/i/950/depositphotos_227208964-stock-photo-new-year-christmas-abstract-icy.jpg" class="bg-img" alt="Soyuq İçkilər">
-      <div class="label">Seher Yemeyi</div>
-    </a>
-  </div>
-
 </body>
 </html>
