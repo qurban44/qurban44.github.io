@@ -3,54 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>yemekler</title>
-  <!-- Coffee shop stili üçün font -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Yemək Menyusu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fffaf3;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff3c7, #ffeaa7);
       color: #333;
+      overflow-x: hidden;
     }
 
-    /* Üst hissə - sarı xətt və logo */
     .top-bar {
+      text-align: center;
+      padding: 40px 20px 20px;
       position: relative;
-      width: 100%;
-      height: 100px;
-      background: linear-gradient(135deg, #FFD700, #FFF8B5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom-left-radius: 50% 20%;
-      border-bottom-right-radius: 50% 20%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .top-bar-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 90%;
-      max-width: 1100px;
+      background: radial-gradient(circle, #ffe066, #fcd34d);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      border-bottom-left-radius: 100px 20px;
+      border-bottom-right-radius: 100px 20px;
     }
 
     .logo-circle {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       background-color: white;
-      border: 6px solid #FFD700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      border: 6px solid #facc15;
+      margin: 0 auto 10px;
       overflow: hidden;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      animation: pulse 3s infinite;
     }
 
     .logo-circle img {
@@ -59,123 +46,143 @@
       object-fit: cover;
     }
 
-    .nom-container {
+    .nom-text {
       font-family: 'Pacifico', cursive;
-      font-size: 38px;
+      font-size: 42px;
       color: #5c4033;
-      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6),
-                   0 0 2px rgba(92, 64, 51, 0.2);
-      z-index: 1;
+      text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.6);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
     }
 
     .menu-options {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 70px;
       gap: 30px;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     .menu-button {
       position: relative;
-      width: 95%;
-      max-width: 500px;
-      height: 200px;
-      border-radius: 16px;
+      width: 90%;
+      max-width: 550px;
+      height: 220px;
+      border-radius: 20px;
       overflow: hidden;
       text-decoration: none;
-      background-color: #fffbe6;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
     }
 
     .menu-button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      transform: scale(1.03);
     }
 
-    .menu-button .bg-img {
+    .bg-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.6);
+      filter: brightness(0.5);
+      transition: transform 0.6s ease;
     }
 
-    .menu-button .label {
+    .menu-button:hover .bg-img {
+      transform: scale(1.1);
+    }
+
+    .label {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
-      font-size: 28px;
-      font-weight: bold;
+      color: #fff;
+      font-size: 30px;
+      font-weight: 600;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
       z-index: 2;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    .menu-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(1px);
+      z-index: 1;
     }
 
     @media (max-width: 600px) {
       .menu-button {
-        height: 160px;
+        height: 180px;
       }
 
-      .menu-button .label {
+      .label {
         font-size: 22px;
-      }
-
-      .nom-container {
-        font-size: 32px;
       }
 
       .logo-circle {
         width: 85px;
         height: 85px;
       }
+
+      .nom-text {
+        font-size: 34px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Üst hissə və logo -->
+  <!-- Üst hissə -->
   <div class="top-bar">
-    <div class="top-bar-content">
-      <div class="nom-container">NOM</div>
-
-      <div class="logo-circle">
-        <img src="img/IMG_7677 (1).PNG" alt="Logo">
-      </div>
-
-      <div class="nom-container">NOM</div>
+    <div class="logo-circle">
+      <img src="img/IMG_7677 (1).PNG" alt="Logo">
     </div>
+    <div class="nom-text">NOM</div>
   </div>
 
-  <!-- İçkilər seçimləri -->
+  <!-- Menyu seçimləri -->
   <div class="menu-options">
 
-    <!-- İsti İçkilər -->
-    <a href="index(6).html" class="menu-button">
-      <img src="https://images.pexels.com/videos/2715412/free-video-2715412.jpg" class="bg-img" alt="Kofe">
+    <!-- Fast Food -->
+    <a href="index(2).html" class="menu-button">
+      <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg" class="bg-img" alt="Fast Food">
       <div class="label">Fast Food</div>
     </a>
 
-    <!-- Soyuq İçkilər -->
-    <a href="index(6).html" class="menu-button">
-      <img src="https://st4.depositphotos.com/1765432/22720/i/950/depositphotos_227208964-stock-photo-new-year-christmas-abstract-icy.jpg" class="bg-img" alt="Soyuq İçkilər">
-      <div class="label">isti yemekler</div>
+    <!-- İsti Yeməklər -->
+    <a href="index(3).html" class="menu-button">
+      <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg" class="bg-img" alt="İsti Yeməklər">
+      <div class="label">İsti Yeməklər</div>
     </a>
-    
-  <a href="index(6).html" class="menu-button">
-      <img src="https://st4.depositphotos.com/1765432/22720/i/950/depositphotos_227208964-stock-photo-new-year-christmas-abstract-icy.jpg" class="bg-img" alt="Soyuq İçkilər">
-      <div class="label">Kombo Setler</div>
+
+    <!-- Kombo Setlər -->
+    <a href="index(3).html" class="menu-button">
+      <img src="https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg" class="bg-img" alt="Kombo Setlər">
+      <div class="label">Kombo Setlər</div>
     </a>
-     <a href="index(6).html" class="menu-button">
-      <img src="https://st4.depositphotos.com/1765432/22720/i/950/depositphotos_227208964-stock-photo-new-year-christmas-abstract-icy.jpg" class="bg-img" alt="Soyuq İçkilər">
+
+    <!-- Salatlar -->
+    <a href="index(3).html" class="menu-button">
+      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" class="bg-img" alt="Salatlar">
       <div class="label">Salatlar</div>
     </a>
-         <a href="index(6).html" class="menu-button">
-      <img src="https://st4.depositphotos.com/1765432/22720/i/950/depositphotos_227208964-stock-photo-new-year-christmas-abstract-icy.jpg" class="bg-img" alt="Soyuq İçkilər">
-      <div class="label">Seher Yemeyi</div>
+
+    <!-- Səhər Yeməyi -->
+    <a href="index(3).html" class="menu-button">
+      <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg" class="bg-img" alt="Səhər Yeməyi">
+      <div class="label">Səhər Yeməyi</div>
     </a>
+
   </div>
 
 </body>
