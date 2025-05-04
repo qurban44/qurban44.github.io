@@ -17,7 +17,7 @@
     .top-bar {
       position: relative;
       width: 100%;
-      height: 80px;  /* Yuxarı hissənin hündürlüyü kiçildildi */
+      height: 100px;
       background: linear-gradient(135deg, #FFD700, #FFF8B5);
       display: flex;
       align-items: center;
@@ -36,11 +36,11 @@
     }
 
     .logo-circle {
-      width: 80px;  /* Logo boyutunu kiçiltmək */
-      height: 80px; /* Logo boyutunu kiçiltmək */
+      width: 100px;  /* Logo boyutunu artırdım */
+      height: 100px; /* Logo boyutunu artırdım */
       border-radius: 50%;
       background-color: white;
-      border: 5px solid #FFD700;
+      border: 6px solid #FFD700;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -61,7 +61,7 @@
     /* NOM - coffee shop üslubunda */
     .nom-container {
       font-family: 'Pacifico', cursive;
-      font-size: 30px;  /* Font ölçüsünü kiçiltmək */
+      font-size: 38px;
       color: #5c4033;
       text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6),
                    0 0 2px rgba(92, 64, 51, 0.2);
@@ -74,15 +74,15 @@
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      margin-top: 40px;  /* Menyu seçimlərinin yuxarı boşluğunu kiçiltmək */
+      margin-top: 50px;
       padding: 20px;
     }
 
     .menu-button {
       position: relative;
       width: 90%;
-      max-width: 380px;  /* Menyu düyməsinin eni kiçildildi */
-      height: 140px;  /* Menyu düyməsinin hündürlüyü kiçildildi */
+      max-width: 420px;
+      height: 160px;
       border-radius: 16px;
       overflow: hidden;
       text-decoration: none;
@@ -109,7 +109,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
-      font-size: 20px;  /* Etiketin font ölçüsünü kiçiltmək */
+      font-size: 24px;
       font-weight: bold;
       z-index: 2;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
@@ -117,20 +117,20 @@
 
     @media (max-width: 600px) {
       .menu-button {
-        height: 120px;  /* Mobil cihazlar üçün daha kiçik düymələr */
+        height: 130px;
       }
 
       .menu-button .label {
-        font-size: 18px;  /* Mobil üçün etiket ölçüsünü kiçiltmək */
+        font-size: 20px;
       }
 
       .nom-container {
-        font-size: 28px;  /* Mobil üçün daha kiçik yazı ölçüsü */
+        font-size: 32px;
       }
 
       .logo-circle {
-        width: 70px;  /* Mobil cihazlarda logo ölçüsünü kiçiltmək */
-        height: 70px;
+        width: 85px;
+        height: 85px;
       }
     }
   </style>
@@ -167,4 +167,4 @@
   </div>
 
 </body>
-</html>
+</html> 
