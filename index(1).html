@@ -30,6 +30,23 @@
       border-bottom-left-radius: 100px 20px;
       border-bottom-right-radius: 100px 20px;
       position: relative;
+      z-index: 10;
+    }
+
+    .top-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #facc15;
+      animation: slide 1s infinite alternate;
+    }
+
+    @keyframes slide {
+      0% { width: 0%; }
+      100% { width: 100%; }
     }
 
     .logo-circle {
@@ -158,16 +175,15 @@
 
     <!-- Fast Food -->
     <a href="index(2).html" class="menu-button">
-      <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg" class="bg-img" alt="Fast Food">
+      <img src="https://images.unsplash.com/photo-1604582772336-56adf3a90899?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhY2h8MXx8ZmFzdCUyMGZvb2R8ZW58MHx8fHwxNjg5OTU5NTg1&ixlib=rb-1.2.1&q=80&w=1080" class="bg-img" alt="Fast Food">
       <div class="label">İsti İçkilər</div>
     </a>
 
     <!-- İsti Yeməklər -->
     <a href="index(3).html" class="menu-button">
-      <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg" class="bg-img" alt="İsti Yeməklər">
+      <img src="https://images.unsplash.com/photo-1596484657474-bb18cc61f6d4?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg1OXwwfDF8c2VhY2h8MXx8Y29mZmVlJTIwbW9uY2h8ZW58MHx8fHwxNjg5OTU5NTg5&ixlib=rb-1.2.1&q=80&w=1080" class="bg-img" alt="İsti Yeməklər">
       <div class="label">Soyuq İçkilər</div>
     </a>
-
 
   </div>
 
